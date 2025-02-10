@@ -1,0 +1,59 @@
+.tox-statusbar {
+  display: none !important  ;
+}
+.tox-notifications-container {
+  display: none;
+}
+
+.required {
+  color: red;
+  margin-left: 5px;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+/* .css-1oqqzyl-MuiContainer-root {
+  max-width: 1400px !important;
+} */
+/* 
+.css-1nict8u {
+  width: 160px !important;
+}
+
+.css-j3yd16-MuiStack-root {
+  width: 160px !important;
+}
+
+.css-136y9jh,
+.css-2eqanc-MuiPaper-root-MuiAppBar-root {
+  width: calc(100% - 160px) !important;
+} */
+/* .css-1khah52-MuiButtonBase-root-MuiIconButton-root {
+  left: 152px !important;
+}
+
+
+.MuiDataGrid-root .MuiDataGrid-cell {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}
+.css-1fiukfk-MuiPaper-root-MuiAppBar-root{
+  width: calc(100% - 160px) !important;
+} */
+
+.nav-sticky {
+  position: sticky;
+  top: 100px;
+}
+.MuiDataGrid-root .MuiDataGrid-cell {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+}

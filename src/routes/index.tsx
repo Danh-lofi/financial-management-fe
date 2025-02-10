@@ -1,0 +1,217 @@
+import { Navigate, useRoutes } from 'react-router-dom';
+import AuthGuard from '@/auth/AuthGuard';
+import GuestGuard from '@/auth/GuestGuard';
+import { PATH_AFTER_LOGIN } from '@/config-global';
+import CompactLayout from '@/layouts/compact';
+import DashboardLayout from '@/layouts/dashboard';
+import {
+  BlankPage,
+  ComingSoonPage,
+  DriverPage,
+  EmployeeGeneralPage,
+  EmployeeListPage,
+  FileManagerPage,
+  LoginPage,
+  MaintenancePage,
+  NewPasswordPage,
+  NoticeDetailsPage,
+  Page403,
+  Page404,
+  Page500,
+  PermissionDeniedPage,
+  RegisterPage,
+  RemoocPage,
+  ResetPasswordPage,
+  TransportListPage,
+  TruckPage,
+  UserAccountPage,
+  UserCardsPage,
+  UserCreatePage,
+  UserEditPage,
+  UserListPage,
+  UserListSettingPage,
+  UserPermissionPage,
+  UserProfilePage,
+  VerifyCodePage,
+} from './elements';
+
+// auth
+
+
+// layouts
+
+
+
+// config
+
+//
+
+
+// ----------------------------------------------------------------------
+
+export default function Router() {
+  return useRoutes([
+    // Auth
+    {
+      path: 'auth',
+      children: [
+        {
+          path: 'login',
+          element: (
+            <GuestGuard>
+              <LoginPage />
+            </GuestGuard>
+          ),
+        },
+        {
+          path: 'register',
+          element: (
+            <GuestGuard>
+              <RegisterPage />
+            </GuestGuard>
+          ),
+        },
+        { path: 'login-unprotected', element: <LoginPage /> },
+        { path: 'register-unprotected', element: <RegisterPage /> },
+        {
+          element: <CompactLayout />,
+          children: [
+            { path: 'reset-password', element: <ResetPasswordPage /> },
+            { path: 'new-password', element: <NewPasswordPage /> },
+            { path: 'verify', element: <VerifyCodePage /> },
+          ],
+        },
+      ],
+    },
+
+    // Dashboard
+    {
+      path: 'dashboard',
+      element: (
+        <AuthGuard>
+          <DashboardLayout />
+        </AuthGuard>
+      ),
+      children: [
+        { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
+
+        // System management
+        {
+          path: 'hict',
+          children: [
+            { element: <Navigate to="/" replace />, index: true },
+            {
+              path: 'employee-management',
+              children: [
+                { element: <Navigate to="/dashboard/user/profile" replace />, index: true },
+                {
+                  path: 'general',
+                  element: <EmployeeGeneralPage />,
+                },
+                {
+                  path: 'employee-list',
+                  element: <EmployeeListPage />,
+                },
+              ],
+            },
+            {
+              path: 'transport-host',
+              children: [
+                {
+                  element: <Navigate to="/dashboard/hict/transport-host/truck" replace />,
+                  index: true,
+                },
+                {
+                  path: 'truck',
+                  element: <TruckPage />,
+                },
+
+                {
+                  path: 'remooc',
+                  element: <RemoocPage />,
+                },
+
+                {
+                  path: 'driver',
+                  element: <DriverPage />,
+                },
+              ],
+            },
+            {
+              path: 'transport-management',
+              children: [
+                {
+                  path: 'general',
+                  element: <EmployeeGeneralPage />,
+                },
+                {
+                  path: 'transport-list',
+                  element: <TransportListPage />,
+                },
+              ],
+            },
+            {
+              path: 'setting',
+              children: [
+                {
+                  path: 'user-list',
+                  element: <UserListSettingPage />,
+                },
+              ],
+            },
+            {
+              path: 'notice',
+              children: [
+                // { element: <Navigate to="/dashboard/hict/notice/list" replace />, index: true },
+                // { path: 'list', element: <NoticeListPage /> },
+                { path: 'notice-details/:type/:id', element: <NoticeDetailsPage /> },
+              ],
+            },
+
+            { path: 'cards', element: <UserCardsPage /> },
+          ],
+        },
+
+        {
+          path: 'user',
+          children: [
+            { element: <Navigate to="/dashboard/user/profile" replace />, index: true },
+            { path: 'profile', element: <UserProfilePage /> },
+            { path: 'cards', element: <UserCardsPage /> },
+            { path: 'list', element: <UserListPage /> },
+            { path: 'new', element: <UserCreatePage /> },
+            { path: ':name/edit', element: <UserEditPage /> },
+            { path: 'account', element: <UserAccountPage /> },
+            { path: 'permission', element: <UserPermissionPage /> },
+          ],
+        },
+
+        { path: 'files-manager', element: <FileManagerPage /> },
+
+        { path: 'permission-denied', element: <PermissionDeniedPage /> },
+        { path: 'blank', element: <BlankPage /> },
+      ],
+    },
+
+    // Main Routes
+    {
+      element: (
+        <AuthGuard>
+          <DashboardLayout />
+        </AuthGuard>
+      ),
+      children: [{ element: <EmployeeGeneralPage />, index: true }],
+    },
+    {
+      element: <CompactLayout />,
+      children: [
+        { path: 'coming-soon', element: <ComingSoonPage /> },
+        { path: 'maintenance', element: <MaintenancePage /> },
+        { path: '500', element: <Page500 /> },
+        { path: '404', element: <Page404 /> },
+        { path: '403', element: <Page403 /> },
+      ],
+    },
+    { path: '*', element: <Navigate to="/404" replace /> },
+  ]);
+}
