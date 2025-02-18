@@ -1,6 +1,8 @@
-import { Suspense, lazy, ElementType } from 'react';
-// components
+import { ElementType, Suspense, lazy } from 'react';
 import LoadingScreen from '../components/loading-screen';
+
+// components
+
 
 // ----------------------------------------------------------------------
 
@@ -20,41 +22,41 @@ export const VerifyCodePage = Loadable(lazy(() => import('../pages/auth/VerifyCo
 export const NewPasswordPage = Loadable(lazy(() => import('../pages/auth/NewPasswordPage')));
 export const ResetPasswordPage = Loadable(lazy(() => import('../pages/auth/ResetPasswordPage')));
 
-// DASHBOARD: hict
+// DASHBOARD: fm
 export const EmployeeGeneralPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/employee-management/general'))
+  lazy(() => import('../pages/dashboard/fm/employee-management/general'))
 );
 
 export const EmployeeListPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/employee-management/employee-list/index'))
+  lazy(() => import('../pages/dashboard/fm/employee-management/employee-list/index'))
 );
 
 export const TransportListPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/transport-management/order-list/index'))
+  lazy(() => import('../pages/dashboard/fm/transport-management/order-list/index'))
 );
 
 // Category
 export const TruckPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/transport-host/truck/index'))
+  lazy(() => import('../pages/dashboard/fm/transport-host/truck/index'))
 );
 
 export const RemoocPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/transport-host/remooc/index'))
+  lazy(() => import('../pages/dashboard/fm/transport-host/remooc/index'))
 );
 export const DriverPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/transport-host/driver/index'))
+  lazy(() => import('../pages/dashboard/fm/transport-host/driver/index'))
 );
 
 // Notices
 export const NoticeDetailsPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/notice/details'))
+  lazy(() => import('../pages/dashboard/fm/notice/details'))
 );
 export const NoticeListPage = Loadable(
-  lazy(() => import('../sections/@dashboard/hict/notice/NoticeListSection'))
+  lazy(() => import('@/sections/@dashboard/fm/notice/NoticeListSection'))
 );
 
 export const UserListSettingPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/setting-pages/user'))
+  lazy(() => import('../pages/dashboard/fm/setting-pages/user'))
 );
 
 // DASHBOARD: USER
@@ -65,7 +67,7 @@ export const UserAccountPage = Loadable(lazy(() => import('../pages/dashboard/Us
 export const UserCreatePage = Loadable(lazy(() => import('../pages/dashboard/UserCreatePage')));
 export const UserEditPage = Loadable(lazy(() => import('../pages/dashboard/UserEditPage')));
 export const UserPermissionPage = Loadable(
-  lazy(() => import('../pages/dashboard/hict/account-popover/PermissionPage'))
+  lazy(() => import('../pages/dashboard/fm/account-popover/PermissionPage'))
 );
 
 // DASHBOARD: FILE MANAGER

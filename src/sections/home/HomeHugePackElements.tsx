@@ -1,53 +1,68 @@
-import { useState } from 'react';
 import { m } from 'framer-motion';
-// @mui
-import { alpha, styled } from '@mui/material/styles';
+import { useState } from 'react';
+import useResponsive from '@/hooks/useResponsive';
+import { PATH_PAGE } from '@/routes/paths';
 import {
-  Fab,
-  Tab,
-  Box,
-  Grid,
-  Tabs,
-  Chip,
   Alert,
-  Stack,
-  Radio,
-  Paper,
+  AlertTitle,
+  Box,
   Button,
+  CardHeader,
+  Checkbox,
+  Chip,
+  CircularProgress,
+  Container,
+  Fab,
+  FormControlLabel,
+  Grid,
+  IconButton,
+  MenuItem,
+  Pagination,
+  Paper,
+  Radio,
   Rating,
   Slider,
+  Stack,
   Switch,
-  MenuItem,
-  Checkbox,
-  Container,
+  Tab,
+  Tabs,
   TextField,
-  Typography,
-  AlertTitle,
-  Pagination,
-  CardHeader,
-  IconButton,
   ToggleButton,
-  CircularProgress,
-  FormControlLabel,
   ToggleButtonGroup,
+  Typography,
 } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// utils
-import { bgGradient } from '../../utils/cssStyles';
-// routes
-import { PATH_PAGE } from '../../routes/paths';
-// _mock
+import { alpha, styled } from '@mui/material/styles';
 import _mock from '../../_mock';
-// components
-import Label from '../../components/label';
-import Image from '../../components/image';
-import Iconify from '../../components/iconify';
-import Scrollbar from '../../components/scrollbar';
-import MenuPopover from '../../components/menu-popover';
-import BadgeStatus from '../../components/badge-status';
 import { MotionViewport, varFade } from '../../components/animate';
+import BadgeStatus from '../../components/badge-status';
 import { CustomAvatar, CustomAvatarGroup } from '../../components/custom-avatar';
+import Iconify from '../../components/iconify';
+import Image from '../../components/image';
+import Label from '../../components/label';
+import MenuPopover from '../../components/menu-popover';
+import Scrollbar from '../../components/scrollbar';
+import { bgGradient } from '../../utils/cssStyles';
+
+// @mui
+
+
+// hooks
+
+// utils
+
+// routes
+
+// _mock
+
+// components
+
+
+
+
+
+
+
+
 
 // ----------------------------------------------------------------------
 

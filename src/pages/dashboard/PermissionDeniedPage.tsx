@@ -10,10 +10,10 @@ import {
   ToggleButtonGroup,
   Typography,
 } from '@mui/material';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import RoleBasedGuard from '../../auth/RoleBasedGuard';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';
-import { PATH_DASHBOARD } from '../../routes/paths';
 
 // @mui
 
@@ -43,7 +43,7 @@ export default function PermissionDeniedPage() {
   return (
     <>
       <Helmet>
-        <title> Other Cases: Permission Denied | hict Portal</title>
+        <title> Other Cases: Permission Denied |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

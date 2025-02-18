@@ -1,7 +1,7 @@
-import useResponsive from 'hooks/useResponsive';
-import { AnalyticsCurrentVisits } from 'sections/@dashboard/general/analytics';
-import { AppWidgetSummary } from 'sections/@dashboard/general/app';
+import useResponsive from '@/hooks/useResponsive';
 import { useLocales } from '@/locales';
+import { AnalyticsCurrentVisits } from '@/sections/@dashboard/general/analytics';
+import { AppWidgetSummary } from '@/sections/@dashboard/general/app';
 import { Box, Card, Grid, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 

@@ -1,14 +1,20 @@
 import { t } from 'i18next';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Stack, Typography, Link } from '@mui/material';
-// layouts
+import { PATH_AUTH } from '@/routes/paths';
+import { Link, Stack, Typography } from '@mui/material';
 import LoginLayout from '../../layouts/login';
-// routes
-import { PATH_AUTH } from '../../routes/paths';
-//
-import AuthWithSocial from './AuthWithSocial';
 import AuthRegisterForm from './AuthRegisterForm';
+import AuthWithSocial from './AuthWithSocial';
+
+// @mui
+
+// layouts
+
+// routes
+
+//
+
+
 
 // ----------------------------------------------------------------------
 

@@ -1,8 +1,11 @@
 import i18next from 'i18next';
-// routes
-import { PATH_DASHBOARD } from '../../../routes/paths';
-// components
+import { PATH_DASHBOARD } from '@/routes/paths';
 import SvgColor from '../../../components/svg-color';
+
+// routes
+
+// components
+
 
 // ----------------------------------------------------------------------
 
@@ -41,49 +44,49 @@ const navConfig = [
     subheader: i18next.t('systemManagement'),
     items: [
       {
-        title: 'HICT',
-        path: PATH_DASHBOARD.hict.root,
+        title: 'FM',
+        path: PATH_DASHBOARD.fm.root,
         icon: ICONS.label,
         children: [
           {
             title: i18next.t('category'),
-            path: PATH_DASHBOARD.hict.category.root,
+            path: PATH_DASHBOARD.fm.category.root,
             children: [
               {
                 title: i18next.t('truck'),
-                path: PATH_DASHBOARD.hict.category.truckList,
+                path: PATH_DASHBOARD.fm.category.truckList,
               },
               {
                 title: i18next.t('remooc'),
-                path: PATH_DASHBOARD.hict.category.remoocList,
+                path: PATH_DASHBOARD.fm.category.remoocList,
               },
               {
                 title: i18next.t('driver'),
-                path: PATH_DASHBOARD.hict.category.driverList,
+                path: PATH_DASHBOARD.fm.category.driverList,
               },
             ],
           },
           {
             title: i18next.t('transportManagement'),
-            path: PATH_DASHBOARD.hict.transportManagement.general,
+            path: PATH_DASHBOARD.fm.transportManagement.general,
             children: [
               {
                 title: i18next.t('general'),
-                path: PATH_DASHBOARD.hict.transportManagement.general,
+                path: PATH_DASHBOARD.fm.transportManagement.general,
               },
               {
                 title: i18next.t('transportList'),
-                path: PATH_DASHBOARD.hict.transportManagement.transportList,
+                path: PATH_DASHBOARD.fm.transportManagement.transportList,
               },
             ],
           },
           {
             title: i18next.t('setting'),
-            path: PATH_DASHBOARD.hict.setting.root,
+            path: PATH_DASHBOARD.fm.setting.root,
             children: [
               {
                 title: i18next.t('user'),
-                path: PATH_DASHBOARD.hict.setting.userList,
+                path: PATH_DASHBOARD.fm.setting.userList,
               },
               {
                 title: i18next.t('permission'),

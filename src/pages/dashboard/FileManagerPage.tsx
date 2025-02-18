@@ -1,33 +1,47 @@
-import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
-// @mui
-import { Stack, Button, Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// utils
-import { fTimestamp } from '../../utils/formatTime';
-// _mock_
-import { _allFiles } from '../../_mock/arrays';
-// @types
+import { Helmet } from 'react-helmet-async';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { Button, Container, Stack } from '@mui/material';
 import { IFile } from '../../@types/file';
-// components
-import Iconify from '../../components/iconify';
+import { _allFiles } from '../../_mock/arrays';
 import ConfirmDialog from '../../components/confirm-dialog';
-import { fileFormat } from '../../components/file-thumbnail';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
-import { useSettingsContext } from '../../components/settings';
-import { useTable, getComparator } from '../../components/table';
 import DateRangePicker, { useDateRangePicker } from '../../components/date-range-picker';
-// sections
+import { fileFormat } from '../../components/file-thumbnail';
+import Iconify from '../../components/iconify';
+import { useSettingsContext } from '../../components/settings';
+import { getComparator, useTable } from '../../components/table';
+import { fTimestamp } from '../../utils/formatTime';
 import {
-  FileListView,
-  FileGridView,
-  FileFilterType,
-  FileFilterName,
-  FileFilterButton,
   FileChangeViewButton,
+  FileFilterButton,
+  FileFilterName,
+  FileFilterType,
+  FileGridView,
+  FileListView,
   FileNewFolderDialog,
-} from '../../sections/@dashboard/file';
+} from '../@/sections/@dashboard/file';
+
+// @mui
+
+// routes
+
+// utils
+
+// _mock_
+
+// @types
+
+// components
+
+
+
+
+
+
+
+// sections
+
 
 // ----------------------------------------------------------------------
 
@@ -189,7 +203,7 @@ export default function FileManagerPage() {
   return (
     <>
       <Helmet>
-        <title> File Manager | hict Portal</title>
+        <title> File Manager |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

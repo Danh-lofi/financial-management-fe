@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useAuthContext } from '@/auth/useAuthContext';
+import useResponsive from '@/hooks/useResponsive';
 import { Box } from '@mui/material';
 import { useSettingsContext } from '../../components/settings';
-import useResponsive from '../../hooks/useResponsive';
 import Main from './Main';
 import Header from './header';
 import NavHorizontal from './nav/NavHorizontal';

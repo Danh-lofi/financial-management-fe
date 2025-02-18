@@ -1,12 +1,16 @@
 import { m } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
 import { Button, Typography } from '@mui/material';
-// components
-import { MotionContainer, varBounce } from '../components/animate';
-// assets
 import { PageNotFoundIllustration } from '../assets/illustrations';
+import { MotionContainer, varBounce } from '../components/animate';
+
+// @mui
+
+// components
+
+// assets
+
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +18,7 @@ export default function Page404() {
   return (
     <>
       <Helmet>
-        <title> 404 Page Not Found | hict Portal</title>
+        <title> 404 Page Not Found | fm Portal</title>
       </Helmet>
 
       <MotionContainer>

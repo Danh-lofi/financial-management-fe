@@ -154,6 +154,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         username,
         password,
       });
+
       const { accessToken, refreshToken, payload } = response.data;
       LocalUtils.set(LOCAL_STORAGE_KEYS.REFRESH_TOKEN, refreshToken);
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Utils } from 'utils/utils';
 import { PermissionAction } from '@/constants/app.constants';
+import { Utils } from '@/utils/utils';
 
 type Props = {
   children: React.ReactNode;

@@ -1,15 +1,23 @@
 import { m } from 'framer-motion';
-// @mui
+import useResponsive from '@/hooks/useResponsive';
+import { Box, Container, Grid, Link, Paper, Rating, Typography } from '@mui/material';
 import { alpha, styled, useTheme } from '@mui/material/styles';
-import { Box, Grid, Link, Paper, Rating, Container, Typography } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// utils
+import { MotionViewport, varFade } from '../../components/animate';
+import Iconify from '../../components/iconify';
 import { bgBlur, bgGradient } from '../../utils/cssStyles';
 import { fDate } from '../../utils/formatTime';
+
+// @mui
+
+
+// hooks
+
+// utils
+
+
 // components
-import Iconify from '../../components/iconify';
-import { MotionViewport, varFade } from '../../components/animate';
+
+
 
 // ----------------------------------------------------------------------
 

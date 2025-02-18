@@ -1,19 +1,24 @@
-import { createContext, useEffect, useReducer, useCallback, useMemo } from 'react';
 import {
+  AuthenticationDetails,
   CognitoUser,
+  CognitoUserAttribute,
   CognitoUserPool,
   CognitoUserSession,
-  CognitoUserAttribute,
-  AuthenticationDetails,
 } from 'amazon-cognito-identity-js';
-// utils
-import axios from '../utils/axios';
-// routes
-import { PATH_AUTH } from '../routes/paths';
-// config
+import { createContext, useCallback, useEffect, useMemo, useReducer } from 'react';
+import { PATH_AUTH } from '@/routes/paths';
 import { COGNITO_API } from '../config-global';
+import axios from '../utils/axios';
+import { AWSCognitoContextType, ActionMapType, AuthStateType, AuthUserType } from './types';
+
+// utils
+
+// routes
+
+// config
+
 //
-import { ActionMapType, AuthStateType, AuthUserType, AWSCognitoContextType } from './types';
+
 
 // ----------------------------------------------------------------------
 

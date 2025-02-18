@@ -1,9 +1,9 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 
 import dayjs from 'dayjs';
-import { isNumeric } from 'utils/common';
-import SnakeBar from 'utils/snackbar';
 import { FORMAT_DATE, FORMAT_DATE_TIME, statusPayment } from '@/constants/app.constants';
+import { isNumeric } from '@/utils/common';
+import SnakeBar from '@/utils/snackbar';
 import MBadge from '../../common/MBadge';
 import MErrorList from '../../common/MErrorList';
 import WCheckBoxTable from '../../common/WCheckBoxTable';

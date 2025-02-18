@@ -1,7 +1,10 @@
 // routes
-import { PATH_AUTH } from '../routes/paths';
-// utils
+
+import { PATH_AUTH } from '@/routes/paths';
 import axios from '../utils/axios';
+
+// utils
+
 
 // ----------------------------------------------------------------------
 
@@ -42,8 +45,8 @@ export const tokenExpired = (exp: number) => {
   const currentTime = Date.now();
 
   // Test token expires after 10s
-  // const timeLeft = currentTime + 10000 - currentTime; // ~10s
-  const timeLeft = exp * 1000 - currentTime;
+  const timeLeft = currentTime + 10000 - currentTime; // ~10s
+  // const timeLeft = exp * 1000 - currentTime;
 
   clearTimeout(expiredTimer);
 
@@ -66,7 +69,7 @@ export const setSession = (accessToken: string | null) => {
 
     // This function below will handle when token is expired
     const { exp } = jwtDecode(accessToken); // ~3 days by minimals server
-    tokenExpired(exp);
+    // tokenExpired(exp);
   } else {
     localStorage.removeItem('accessToken');
 

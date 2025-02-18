@@ -1,10 +1,14 @@
 import orderBy from 'lodash/orderBy';
 import { Helmet } from 'react-helmet-async';
+import { Box, BoxProps, Container, Divider, Link, Stack, Typography } from '@mui/material';
+import { ComponentCard, ComponentHero } from '../../sections/_examples';
+import { extra, foundation, mui } from '../../sections/_examples/config-navigation';
+
 // @mui
-import { Container, Typography, Stack, Link, Box, BoxProps, Divider } from '@mui/material';
+
 // sections
-import { ComponentHero, ComponentCard } from '../../sections/_examples';
-import { foundation, mui, extra } from '../../sections/_examples/config-navigation';
+
+
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +16,7 @@ export default function ComponentsOverviewPage() {
   return (
     <>
       <Helmet>
-        <title> Components Overview | hict Portal</title>
+        <title> Components Overview | fm Portal</title>
       </Helmet>
 
       <ComponentHero />

@@ -1,13 +1,19 @@
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { styled, alpha } from '@mui/material/styles';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { Box, Link, Typography } from '@mui/material';
-// auth
+import { alpha, styled } from '@mui/material/styles';
 import { useAuthContext } from '../../../auth/useAuthContext';
-// routes
-import { PATH_DASHBOARD } from '../../../routes/paths';
-// components
 import { CustomAvatar } from '../../../components/custom-avatar';
+
+// @mui
+
+
+// auth
+
+// routes
+
+// components
+
 
 // ----------------------------------------------------------------------
 

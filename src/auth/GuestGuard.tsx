@@ -1,10 +1,14 @@
 import { Navigate } from 'react-router-dom';
-// routes
-import { PATH_DASHBOARD } from '../routes/paths';
-// components
+import { PATH_DASHBOARD } from '@/routes/paths';
 import LoadingScreen from '../components/loading-screen';
-//
 import { useAuthContext } from './useAuthContext';
+
+// routes
+
+// components
+
+//
+
 
 // ----------------------------------------------------------------------
 

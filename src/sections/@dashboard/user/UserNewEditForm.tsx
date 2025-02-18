@@ -3,6 +3,7 @@ import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useLocales } from '@/locales';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LoadingButton } from '@mui/lab';
 import { Box, Card, FormControlLabel, Grid, Stack, Switch, Typography } from '@mui/material';
@@ -17,7 +18,6 @@ import {
 import Label from '../../../components/label';
 import { useSnackbar } from '../../../components/snackbar';
 import { CustomFile } from '../../../components/upload';
-import { PATH_DASHBOARD } from '../../../routes/paths';
 import { fData } from '../../../utils/formatNumber';
 
 // form

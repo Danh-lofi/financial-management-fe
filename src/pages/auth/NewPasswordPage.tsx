@@ -1,15 +1,21 @@
 import { Helmet } from 'react-helmet-async';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
 import { Link, Typography } from '@mui/material';
-// routes
-import { PATH_AUTH } from '../../routes/paths';
-// components
-import Iconify from '../../components/iconify';
-// sections
-import AuthNewPasswordForm from '../../sections/auth/AuthNewPasswordForm';
-// assets
+import { PATH_AUTH } from '@/routes/paths';
 import { SentIcon } from '../../assets/icons';
+import Iconify from '../../components/iconify';
+import AuthNewPasswordForm from '../../sections/auth/AuthNewPasswordForm';
+
+// @mui
+
+// routes
+
+// components
+
+// sections
+
+// assets
+
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +23,7 @@ export default function NewPasswordPage() {
   return (
     <>
       <Helmet>
-        <title> New Password | hict Portal</title>
+        <title> New Password | fm Portal</title>
       </Helmet>
 
       <SentIcon sx={{ mb: 5, height: 96 }} />

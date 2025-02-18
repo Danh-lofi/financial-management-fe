@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocales } from '@/locales';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { Box, Container, Tab, Tabs } from '@mui/material';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import Iconify from '../../components/iconify';
 import { useSettingsContext } from '../../components/settings';
-import { PATH_DASHBOARD } from '../../routes/paths';
-import { AccountChangePassword, AccountGeneral } from '../../sections/@dashboard/user/account';
+import { AccountChangePassword, AccountGeneral } from '../@/sections/@dashboard/user/account';
 
 // @mui
 
@@ -52,7 +52,7 @@ export default function UserAccountPage() {
   return (
     <>
       <Helmet>
-        <title> User: Account Settings | hict Portal</title>
+        <title> User: Account Settings |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

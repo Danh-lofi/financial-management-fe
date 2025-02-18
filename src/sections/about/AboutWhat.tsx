@@ -1,17 +1,26 @@
 import { m } from 'framer-motion';
-// @mui
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Grid, Button, Container, Typography, LinearProgress } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// utils
-import { fPercent } from '../../utils/formatNumber';
-// _mock_
+import useResponsive from '@/hooks/useResponsive';
+import { Box, Button, Container, Grid, LinearProgress, Typography } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles';
 import { _skills } from '../../_mock/arrays';
-// components
-import Image from '../../components/image';
-import Iconify from '../../components/iconify';
 import { MotionViewport, varFade } from '../../components/animate';
+import Iconify from '../../components/iconify';
+import Image from '../../components/image';
+import { fPercent } from '../../utils/formatNumber';
+
+// @mui
+
+
+// hooks
+
+// utils
+
+// _mock_
+
+// components
+
+
+
 
 // ----------------------------------------------------------------------
 

@@ -1,13 +1,19 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// components
-import { useSettingsContext } from '../../components/settings';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
+import { useSettingsContext } from '../../components/settings';
+import UserNewEditForm from '../@/sections/@dashboard/user/UserNewEditForm';
+
+// @mui
+
+// routes
+
+// components
+
+
 // sections
-import UserNewEditForm from '../../sections/@dashboard/user/UserNewEditForm';
+
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +23,7 @@ export default function UserCreatePage() {
   return (
     <>
       <Helmet>
-        <title> User: Create a new user | hict Portal</title>
+        <title> User: Create a new user |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

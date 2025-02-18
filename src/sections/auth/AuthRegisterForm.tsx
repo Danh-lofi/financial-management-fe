@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
-import { PATH_AUTH } from 'routes/paths';
 import * as Yup from 'yup';
 import AccountApi from '@/apis/account.api';
+import { PATH_AUTH } from '@/routes/paths';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LoadingButton } from '@mui/lab';
 import { Alert, IconButton, InputAdornment, MenuItem, Stack } from '@mui/material';

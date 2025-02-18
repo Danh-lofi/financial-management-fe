@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-// components
+import { PATH_AUTH } from '@/routes/paths';
 import LoadingScreen from '../components/loading-screen';
-//
 import { useAuthContext } from './useAuthContext';
-import { PATH_AUTH } from '../routes/paths';
+
+// components
+
+//
+
+
 
 // ----------------------------------------------------------------------
 

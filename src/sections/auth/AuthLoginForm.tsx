@@ -3,13 +3,13 @@ import { useForm } from 'react-hook-form';
 import { Link as RouterLink } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useLocales } from '@/locales';
+import { PATH_AUTH } from '@/routes/paths';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LoadingButton } from '@mui/lab';
 import { IconButton, InputAdornment, Link, Stack } from '@mui/material';
 import { useAuthContext } from '../../auth/useAuthContext';
 import FormProvider, { RHFTextField } from '../../components/hook-form';
 import Iconify from '../../components/iconify';
-import { PATH_AUTH } from '../../routes/paths';
 
 // form
 

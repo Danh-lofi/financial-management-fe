@@ -22,7 +22,7 @@ const axiosInstance = (
   isShowErrorMessage = true,
   allowAnonymous = false
 ): AxiosInstance => {
-  const baseURL = `${process.env.REACT_APP_API_ENPOINT}`;
+  const baseURL = `${import.meta.env.VITE_API_URL}`;
 
   if (isShowLoading) toggleLoading(true);
 

@@ -1,14 +1,20 @@
-import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom';
-// form
-import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-// @mui
+import { useNavigate } from 'react-router-dom';
+import * as Yup from 'yup';
+import { PATH_AUTH } from '@/routes/paths';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { LoadingButton } from '@mui/lab';
-// routes
-import { PATH_AUTH } from '../../routes/paths';
-// components
 import FormProvider, { RHFTextField } from '../../components/hook-form';
+
+// form
+
+
+// @mui
+
+// routes
+
+// components
+
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +31,7 @@ export default function AuthResetPasswordForm() {
 
   const methods = useForm<FormValuesProps>({
     resolver: yupResolver(ResetPasswordSchema),
-    defaultValues: { email: 'admin@hict.com.vn' },
+    defaultValues: { email: 'admin@fm.com.vn' },
   });
 
   const {

@@ -1,15 +1,21 @@
 import { Helmet } from 'react-helmet-async';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
 import { Link, Typography } from '@mui/material';
-// routes
-import { PATH_AUTH } from '../../routes/paths';
-// components
-import Iconify from '../../components/iconify';
-// sections
-import AuthVerifyCodeForm from '../../sections/auth/AuthVerifyCodeForm';
-// assets
+import { PATH_AUTH } from '@/routes/paths';
 import { EmailInboxIcon } from '../../assets/icons';
+import Iconify from '../../components/iconify';
+import AuthVerifyCodeForm from '../../sections/auth/AuthVerifyCodeForm';
+
+// @mui
+
+// routes
+
+// components
+
+// sections
+
+// assets
+
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +23,7 @@ export default function VerifyCodePage() {
   return (
     <>
       <Helmet>
-        <title> Verify Code | hict Portal</title>
+        <title> Verify Code | fm Portal</title>
       </Helmet>
 
       <EmailInboxIcon sx={{ mb: 5, height: 96 }} />

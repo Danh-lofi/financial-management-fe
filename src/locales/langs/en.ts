@@ -57,8 +57,8 @@ const en = {
   item_by_roles: `item by roles`,
   only_admin_can_see_this_item: `Only admin can see this item`,
 
-  // hict
-  hict: 'hict',
+  //  MM
+  fm ' fm
   systemManagement: 'System Management',
   employeeList: 'Employee List',
   recruitment: 'Recruitment',
@@ -198,7 +198,7 @@ const en = {
   },
 
   // Basic employee information
-  hictEmployeeId: 'hict Employee Id',
+  fmmployeeId: ' fmmployee Id',
   employeeIdInProject: 'Employee Id in Project',
   idCard: 'Identity Card / Citizen Identification',
   typeOfDocument: 'Type of document',

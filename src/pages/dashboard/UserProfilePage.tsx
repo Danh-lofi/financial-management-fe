@@ -1,31 +1,40 @@
-import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
-// @mui
-import { Tab, Card, Tabs, Container, Box } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// auth
-import { useAuthContext } from '../../auth/useAuthContext';
-// _mock_
+import { Helmet } from 'react-helmet-async';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { Box, Card, Container, Tab, Tabs } from '@mui/material';
 import {
   _userAbout,
   _userFeeds,
+  _userFollowers,
   _userFriends,
   _userGallery,
-  _userFollowers,
 } from '../../_mock/arrays';
-// components
-import Iconify from '../../components/iconify';
+import { useAuthContext } from '../../auth/useAuthContext';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
+import Iconify from '../../components/iconify';
 import { useSettingsContext } from '../../components/settings';
-// sections
 import {
   Profile,
   ProfileCover,
+  ProfileFollowers,
   ProfileFriends,
   ProfileGallery,
-  ProfileFollowers,
-} from '../../sections/@dashboard/user/profile';
+} from '../@/sections/@dashboard/user/profile';
+
+// @mui
+
+// routes
+
+// auth
+
+// _mock_
+
+// components
+
+
+
+// sections
+
 
 // ----------------------------------------------------------------------
 
@@ -76,7 +85,7 @@ export default function UserProfilePage() {
   return (
     <>
       <Helmet>
-        <title> User: Profile | hict Portal</title>
+        <title> User: Profile |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

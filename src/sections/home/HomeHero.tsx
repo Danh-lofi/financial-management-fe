@@ -1,21 +1,31 @@
 import { m, useScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { styled, alpha, useTheme } from '@mui/material/styles';
-import { Button, Box, Link, Container, Typography, Stack, Grid, Rating } from '@mui/material';
-// routes
-import { PATH_DASHBOARD, PATH_FIGMA_PREVIEW, PATH_FREE_VERSION } from '../../routes/paths';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// utils
-import { textGradient, bgGradient } from '../../utils/cssStyles';
-// config
-import { HEADER } from '../../config-global';
-// components
-import SvgColor from '../../components/svg-color';
-import Iconify from '../../components/iconify';
+import useResponsive from '@/hooks/useResponsive';
+import { PATH_DASHBOARD, PATH_FIGMA_PREVIEW, PATH_FREE_VERSION } from '@/routes/paths';
+import { Box, Button, Container, Grid, Link, Rating, Stack, Typography } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles';
 import { MotionContainer, varFade } from '../../components/animate';
+import Iconify from '../../components/iconify';
+import SvgColor from '../../components/svg-color';
+import { HEADER } from '../../config-global';
+import { bgGradient, textGradient } from '../../utils/cssStyles';
+
+// @mui
+
+
+// routes
+
+// hooks
+
+// utils
+
+// config
+
+// components
+
+
+
 
 // ----------------------------------------------------------------------
 

@@ -1,15 +1,22 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
-import { Container, Box } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// _mock_
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { Box, Container } from '@mui/material';
 import { _userCards } from '../../_mock/arrays';
-// components
-import { useSettingsContext } from '../../components/settings';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
+import { useSettingsContext } from '../../components/settings';
+import { UserCard } from '../@/sections/@dashboard/user/cards';
+
+// @mui
+
+// routes
+
+// _mock_
+
+// components
+
+
 // sections
-import { UserCard } from '../../sections/@dashboard/user/cards';
+
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +26,7 @@ export default function UserCardsPage() {
   return (
     <>
       <Helmet>
-        <title> User: Cards | hict Portal</title>
+        <title> User: Cards |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

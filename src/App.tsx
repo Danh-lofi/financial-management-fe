@@ -1,6 +1,6 @@
 // i18n
 
-import './locales/i18n';
+import '@/locales/i18n';
 import 'simplebar-react/dist/simplebar.min.css';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
@@ -17,6 +17,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { Provider as ReduxProvider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/lib/integration/react';
+import { persistor, store } from '@/redux/store';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { AuthProvider } from './auth/JwtContext';
@@ -26,7 +27,6 @@ import ScrollToTop from './components/scroll-to-top';
 import { SettingsProvider, ThemeSettings } from './components/settings';
 import SnackbarProvider from './components/snackbar';
 import ThemeLocalization from './locales';
-import { persistor, store } from './redux/store';
 import Router from './routes';
 import ThemeProvider from './theme';
 import {SnackbarUtilsConfigurator} from "./utils/snackbar"

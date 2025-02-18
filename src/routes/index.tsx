@@ -97,7 +97,7 @@ export default function Router() {
 
         // System management
         {
-          path: 'hict',
+          path: 'fm',
           children: [
             { element: <Navigate to="/" replace />, index: true },
             {
@@ -118,7 +118,7 @@ export default function Router() {
               path: 'transport-host',
               children: [
                 {
-                  element: <Navigate to="/dashboard/hict/transport-host/truck" replace />,
+                  element: <Navigate to="/dashboard/fm/transport-host/truck" replace />,
                   index: true,
                 },
                 {
@@ -162,7 +162,7 @@ export default function Router() {
             {
               path: 'notice',
               children: [
-                // { element: <Navigate to="/dashboard/hict/notice/list" replace />, index: true },
+                // { element: <Navigate to="/dashboard/fm/notice/list" replace />, index: true },
                 // { path: 'list', element: <NoticeListPage /> },
                 { path: 'notice-details/:type/:id', element: <NoticeDetailsPage /> },
               ],

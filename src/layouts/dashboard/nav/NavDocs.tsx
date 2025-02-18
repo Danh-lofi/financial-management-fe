@@ -1,11 +1,16 @@
 // @mui
-import { Stack, Button, Typography, Box } from '@mui/material';
-// auth
+
+import { PATH_DOCS } from '@/routes/paths';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { useAuthContext } from '../../../auth/useAuthContext';
-// locales
 import { useLocales } from '../../../locales';
+
+// auth
+
+// locales
+
 // routes
-import { PATH_DOCS } from '../../../routes/paths';
+
 
 // ----------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import { PATH_DASHBOARD } from 'routes/paths';
 import { useLocales } from '@/locales';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { LoadingButton } from '@mui/lab';
 import { Box, Card } from '@mui/material';
 import { Stack } from '@mui/system';
@@ -21,7 +21,7 @@ const CreateComponent = ({ isEdit, isSubmitting, disabled = false }: Props) => {
       <Stack alignItems="flex-end">
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <LoadingButton
-            onClick={() => navigate(PATH_DASHBOARD.hict.employeeManagement.employeeStatus)}
+            onClick={() => navigate(PATH_DASHBOARD.fm.employeeManagement.employeeStatus)}
             type="submit"
             variant="outlined"
           >

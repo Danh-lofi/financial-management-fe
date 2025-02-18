@@ -1,13 +1,19 @@
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-// @mui
-import { Box, Grid, Link, Stack, Divider, Container, Typography, IconButton } from '@mui/material';
-// routes
-import { PATH_PAGE } from '../../routes/paths';
-// _mock
+import { PATH_PAGE } from '@/routes/paths';
+import { Box, Container, Divider, Grid, IconButton, Link, Stack, Typography } from '@mui/material';
 import { _socials } from '../../_mock/arrays';
-// components
-import Logo from '../../components/logo';
 import Iconify from '../../components/iconify';
+import Logo from '../../components/logo';
+
+// @mui
+
+// routes
+
+// _mock
+
+// components
+
+
 
 // ----------------------------------------------------------------------
 
@@ -95,7 +101,7 @@ export default function Footer() {
 
           <Grid item xs={8} md={3}>
             <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              The starting point for your next project with hict Portal, built on the newest
+              The starting point for your next project with  MM Portal, built on the newest
               version of Material-UI ©, ready to be customized to your style.
             </Typography>
 

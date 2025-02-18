@@ -41,8 +41,8 @@ export const Utils = {
     const fileName = `${Date.now()}-${Utils.formatVN(file?.name)}-${fileNameUpload}`;
 
     const config = {
-      bucketName: 'techsource-hict',
-      dirName: `hict/${dirName}`,
+      bucketName: 'techsource-fm',
+      dirName: `fm/${dirName}`,
       region: 'ap-southeast-1',
       accessKeyId: 'AKIATHIGM7KOLR3C4BML',
       secretAccessKey: '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',
@@ -61,8 +61,8 @@ export const Utils = {
     const startIndex = url.indexOf(folder);
     const filepath = url.substring(startIndex);
     const config = {
-      bucketName: 'techsource-hict',
-      dirName: `hict/${dirName}`,
+      bucketName: 'techsource-fm',
+      dirName: `fm/${dirName}`,
       region: 'ap-southeast-1',
       accessKeyId: 'AKIATHIGM7KOLR3C4BML',
       secretAccessKey: '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',

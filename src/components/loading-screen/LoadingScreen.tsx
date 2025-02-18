@@ -1,18 +1,27 @@
 import { m } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
-// @mui
-import { alpha, styled } from '@mui/material/styles';
+import useResponsive from '@/hooks/useResponsive';
 import { Box, LinearProgress } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// config
-import { NAV, HEADER } from '../../config-global';
-// auth
+import { alpha, styled } from '@mui/material/styles';
 import { useAuthContext } from '../../auth/useAuthContext';
-//
+import { HEADER, NAV } from '../../config-global';
 import Logo from '../logo';
 import ProgressBar from '../progress-bar';
 import { useSettingsContext } from '../settings';
+
+// @mui
+
+
+// hooks
+
+// config
+
+// auth
+
+//
+
+
+
 
 // ----------------------------------------------------------------------
 

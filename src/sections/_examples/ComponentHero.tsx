@@ -1,14 +1,21 @@
 import { m } from 'framer-motion';
-// @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Container, Typography, Stack } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// utils
-import { bgGradient } from '../../utils/cssStyles';
-// components
-import Image from '../../components/image';
+import useResponsive from '@/hooks/useResponsive';
+import { Container, Stack, Typography } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles';
 import { MotionContainer, varFade } from '../../components/animate';
+import Image from '../../components/image';
+import { bgGradient } from '../../utils/cssStyles';
+
+// @mui
+
+
+// hooks
+
+// utils
+
+// components
+
+
 
 // ----------------------------------------------------------------------
 

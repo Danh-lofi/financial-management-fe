@@ -1,23 +1,36 @@
 import { useRef } from 'react';
-// @mui
+import useResponsive from '@/hooks/useResponsive';
+import { PATH_DOCS, PATH_MINIMAL_ON_STORE } from '@/routes/paths';
+import { AppBar, Box, BoxProps, Button, Container, Link, Toolbar } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Box, Button, AppBar, Toolbar, Container, Link, BoxProps } from '@mui/material';
-// hooks
-import useOffSetTop from '../../hooks/useOffSetTop';
-import useResponsive from '../../hooks/useResponsive';
-// utils
-import { bgBlur } from '../../utils/cssStyles';
-// config
-import { HEADER } from '../../config-global';
-// routes
-import { PATH_DOCS, PATH_MINIMAL_ON_STORE } from '../../routes/paths';
-// components
-import Logo from '../../components/logo';
 import Label from '../../components/label';
-//
+import Logo from '../../components/logo';
+import { HEADER } from '../../config-global';
+import useOffSetTop from '../../hooks/useOffSetTop';
+import { bgBlur } from '../../utils/cssStyles';
 import navConfig from './nav/config-navigation';
-import NavMobile from './nav/mobile';
 import NavDesktop from './nav/desktop';
+import NavMobile from './nav/mobile';
+
+// @mui
+
+
+// hooks
+
+
+// utils
+
+// config
+
+// routes
+
+// components
+
+
+//
+
+
+
 
 // ----------------------------------------------------------------------
 

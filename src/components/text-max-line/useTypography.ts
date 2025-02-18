@@ -1,10 +1,14 @@
 // @mui
+
+import { useWidth } from '@/hooks/useResponsive';
 import { useTheme } from '@mui/material/styles';
 import { Variant } from '@mui/material/styles/createTypography';
-// hooks
-import { useWidth } from '../../hooks/useResponsive';
-// theme
 import { remToPx } from '../../theme/typography';
+
+// hooks
+
+// theme
+
 
 // ----------------------------------------------------------------------
 

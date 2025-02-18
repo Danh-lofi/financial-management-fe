@@ -1,9 +1,9 @@
-import useResponsive from 'hooks/useResponsive';
 import { useState } from 'react';
-import { createEmployeeContract } from 'redux/slices/dashboard/employee';
-import { dispatch, useSelector } from 'redux/store';
-import { Utils } from 'utils/utils';
+import useResponsive from '@/hooks/useResponsive';
 import { useLocales } from '@/locales';
+import { createEmployeeContract } from '@/redux/slices/dashboard/employee';
+import { dispatch, useSelector } from '@/redux/store';
+import { Utils } from '@/utils/utils';
 import { LoadingButton } from '@mui/lab';
 import {
   Box,

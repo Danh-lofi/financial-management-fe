@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Utils } from 'utils/utils';
 import { fileFormat } from '@/components/file-thumbnail';
 import Iconify from '@/components/iconify/Iconify';
 import Image from '@/components/image/Image';
 import { useLocales } from '@/locales';
+import { Utils } from '@/utils/utils';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import { LoadingButton } from '@mui/lab';

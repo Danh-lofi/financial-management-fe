@@ -1,8 +1,8 @@
-import i18n from 'locales/i18n';
-import * as Yup from 'yup';
 import { differenceInDays, differenceInYears } from 'date-fns';
-import { TYPE_OF_INDENTITY_CARD } from '../constants/app.constants';
+import * as Yup from 'yup';
+import i18n from '@/locales/i18n';
 import { PROFILE_UPLOAD_STATUS } from '../assets/data/employee-info-vi';
+import { TYPE_OF_INDENTITY_CARD } from '../constants/app.constants';
 
 // const phoneRegExp =
 // /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -13,7 +13,7 @@ const phoneRegExp = /(84|0[3|5|7|8|9])+([0-9]{8,9})\b/;
 // Basic Form Validate
 
 const EmployeeBasicFormSchema = Yup.object().shape({
-  g_id: Yup.string().required(i18n.t<string>('validate.employee.hictEmployeeId')),
+  g_id: Yup.string().required(i18n.t<string>('validate.employee.fmEmployeeId')),
   fullName: Yup.string()
     .required(i18n.t<string>('validate.employee.name'))
     .matches(wordReg, i18n.t<string>('validate.employee.nameInvalid')),

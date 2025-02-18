@@ -1,15 +1,21 @@
 import { Helmet } from 'react-helmet-async';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
 import { Link, Typography } from '@mui/material';
-// routes
-import { PATH_AUTH } from '../../routes/paths';
-// components
-import Iconify from '../../components/iconify';
-// sections
-import AuthResetPasswordForm from '../../sections/auth/AuthResetPasswordForm';
-// assets
+import { PATH_AUTH } from '@/routes/paths';
 import { PasswordIcon } from '../../assets/icons';
+import Iconify from '../../components/iconify';
+import AuthResetPasswordForm from '../../sections/auth/AuthResetPasswordForm';
+
+// @mui
+
+// routes
+
+// components
+
+// sections
+
+// assets
+
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +23,7 @@ export default function ResetPasswordPage() {
   return (
     <>
       <Helmet>
-        <title> Reset Password | hict Portal</title>
+        <title> Reset Password | fm Portal</title>
       </Helmet>
 
       <PasswordIcon sx={{ mb: 5, height: 96 }} />

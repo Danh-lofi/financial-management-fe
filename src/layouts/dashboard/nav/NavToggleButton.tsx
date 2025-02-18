@@ -1,15 +1,22 @@
 // @mui
-import { useTheme } from '@mui/material/styles';
+
+import useResponsive from '@/hooks/useResponsive';
 import { IconButton, IconButtonProps } from '@mui/material';
-// hooks
-import useResponsive from '../../../hooks/useResponsive';
-// utils
-import { bgBlur } from '../../../utils/cssStyles';
-// config
-import { NAV } from '../../../config-global';
-// components
+import { useTheme } from '@mui/material/styles';
 import Iconify from '../../../components/iconify';
 import { useSettingsContext } from '../../../components/settings';
+import { NAV } from '../../../config-global';
+import { bgBlur } from '../../../utils/cssStyles';
+
+// hooks
+
+// utils
+
+// config
+
+// components
+
+
 
 // ----------------------------------------------------------------------
 

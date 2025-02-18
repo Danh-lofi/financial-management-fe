@@ -1,14 +1,21 @@
 import { m } from 'framer-motion';
-// @mui
-import { styled, useTheme, alpha } from '@mui/material/styles';
-import { Box, Grid, Container, Typography, BoxProps, Button } from '@mui/material';
-// utils
-import { filterStyles, textGradient, bgGradient } from '../../utils/cssStyles';
-// routes
-import { PATH_FIGMA_PREVIEW } from '../../routes/paths';
-// components
-import Iconify from '../../components/iconify';
+import { PATH_FIGMA_PREVIEW } from '@/routes/paths';
+import { Box, BoxProps, Button, Container, Grid, Typography } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles';
 import { MotionViewport, varFade } from '../../components/animate';
+import Iconify from '../../components/iconify';
+import { bgGradient, filterStyles, textGradient } from '../../utils/cssStyles';
+
+// @mui
+
+
+// utils
+
+// routes
+
+// components
+
+
 
 // ----------------------------------------------------------------------
 

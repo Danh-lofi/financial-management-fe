@@ -1,9 +1,10 @@
 // @mui
 
 import { useEffect } from 'react';
-import { getListNotice } from 'redux/slices/dashboard/notice';
-import { dispatch } from 'redux/store';
 import { DEFAULT_PAGINATION } from '@/constants/app.constants';
+import useResponsive from '@/hooks/useResponsive';
+import { getListNotice } from '@/redux/slices/dashboard/notice';
+import { dispatch } from '@/redux/store';
 import { AppBar, IconButton, Stack, Toolbar } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Iconify from '../../../components/iconify';
@@ -11,7 +12,6 @@ import Logo from '../../../components/logo';
 import { useSettingsContext } from '../../../components/settings';
 import { HEADER, NAV } from '../../../config-global';
 import useOffSetTop from '../../../hooks/useOffSetTop';
-import useResponsive from '../../../hooks/useResponsive';
 import { bgBlur } from '../../../utils/cssStyles';
 import AccountPopover from './AccountPopover';
 import ContactsPopover from './ContactsPopover';

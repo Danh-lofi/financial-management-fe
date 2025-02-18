@@ -1,17 +1,24 @@
-import { Helmet } from 'react-helmet-async';
 import { paramCase } from 'change-case';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
-// @mui
+import { PATH_DASHBOARD } from '@/routes/paths';
 import { Container } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// _mock_
 import { _userList } from '../../_mock/arrays';
-// components
-import { useSettingsContext } from '../../components/settings';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
+import { useSettingsContext } from '../../components/settings';
+import UserNewEditForm from '../@/sections/@dashboard/user/UserNewEditForm';
+
+// @mui
+
+// routes
+
+// _mock_
+
+// components
+
+
 // sections
-import UserNewEditForm from '../../sections/@dashboard/user/UserNewEditForm';
+
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +32,7 @@ export default function UserEditPage() {
   return (
     <>
       <Helmet>
-        <title> User: Edit user | hict Portal</title>
+        <title> User: Edit user |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

@@ -1,10 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
 import i18next from 'i18next';
-
-import { Utils } from '../../../utils/utils';
-import { PermissionAction, PermissionList } from '../../../constants/app.constants';
-import { PATH_DASHBOARD } from '../../../routes/paths';
+import { PATH_DASHBOARD } from '@/routes/paths';
+import { createSlice } from '@reduxjs/toolkit';
 import SvgColor from '../../../components/svg-color';
+import { PermissionAction, PermissionList } from '../../../constants/app.constants';
+import { Utils } from '../../../utils/utils';
 
 const icon = (name: string) => (
   <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
@@ -29,7 +28,7 @@ const ICONS = {
   disabled: icon('ic_disabled'),
   external: icon('ic_external'),
   menuItem: icon('ic_menu_item'),
-  ecommerce: icon('ic_ecommerce'),
+  ecfmerce: icon('ic_ecfmerce'),
   analytics: icon('ic_analytics'),
   dashboard: icon('ic_dashboard'),
 };
@@ -66,94 +65,94 @@ const resetNavHandle = () => {
     // MANAGEMENT
     // ----------------------------------------------------------------------
     {
-      subheader: i18next.t('systemManagement'),
+      subheader: i18next.t('systfmanagement'),
       items: [
         {
-          title: i18next.t('hict'),
-          path: PATH_DASHBOARD.hict.root,
+          title: i18next.t('fm'),
+          path: PATH_DASHBOARD.fm.root,
           icon: ICONS.label,
           children: [
             {
               title: i18next.t('employeeManagement'),
-              path: PATH_DASHBOARD.hict.employeeManagement.general,
+              path: PATH_DASHBOARD.fm.employeeManagement.general,
               isShow: true,
 
               children: [
                 {
                   title: i18next.t('general'),
-                  path: PATH_DASHBOARD.hict.employeeManagement.general,
+                  path: PATH_DASHBOARD.fm.employeeManagement.general,
                   isShow: true,
                 },
                 {
                   title: i18next.t('employeeStatus'),
-                  path: PATH_DASHBOARD.hict.employeeManagement.employeeStatus,
+                  path: PATH_DASHBOARD.fm.employeeManagement.employeeStatus,
                   isShow: isShowEmployee,
                 },
                 // {
                 //   title: i18next.t('recruitment'),
-                //   path: PATH_DASHBOARD.hict.employeeManagement.recruitment,
-                // },
+                //   path: PATH_DASHBOARD.fm.employeeManagement.recruitment,
+                // },fm
                 // {
                 //   title: i18next.t('attendance'),
-                //   path: PATH_DASHBOARD.hict.employeeManagement.attendance,
-                // },
+                //   path: PATH_DASHBOARD.fm.employeeManagement.attendance,
+                // },fm
               ],
             },
             {
               title: i18next.t('setting'),
-              path: PATH_DASHBOARD.hict.setting.root,
+              path: PATH_DASHBOARD.fm.setting.root,
               isShow: true,
               children: [
                 {
                   title: i18next.t('project'),
-                  path: PATH_DASHBOARD.hict.setting.project,
-                  isShow: isShowProject,
+                  path: PATH_DASHBOARD.fm.setting.project,
+                  isShow: isShowProject
                 },
                 {
                   title: i18next.t('department'),
-                  path: PATH_DASHBOARD.hict.setting.department,
-                  isShow: isShowDepartment,
+                  path: PATH_DASHBOARD.fm.setting.department,
+                  isShow: isShowDepartment
                 },
 
                 {
                   title: i18next.t('position'),
-                  path: PATH_DASHBOARD.hict.setting.position,
-                  isShow: isShowPosition,
+                  path: PATH_DASHBOARD.fm.setting.position,
+                  isShow: isShowPosition
                 },
 
                 {
                   title: i18next.t('province'),
-                  path: PATH_DASHBOARD.hict.setting.province,
-                  isShow: isShowProvince,
+                  path: PATH_DASHBOARD.fm.setting.province,
+                  isShow: isShowProvince
                 },
                 {
                   title: i18next.t('district'),
-                  path: PATH_DASHBOARD.hict.setting.district,
-                  isShow: isShowDistrict,
+                  path: PATH_DASHBOARD.fm.setting.district,
+                  isShow: isShowDistrict
                 },
                 {
                   title: i18next.t('ward'),
-                  path: PATH_DASHBOARD.hict.setting.ward,
+                  path: PATH_DASHBOARD.fm.setting.ward,
                   isShow: isShowWard,
                 },
                 {
                   title: i18next.t('medicalFacility'),
-                  path: PATH_DASHBOARD.hict.setting.medicalFacility,
+                  path: PATH_DASHBOARD.fm.setting.medicalFacility,
                   isShow: isShowMedicalFacility,
                 },
                 {
                   title: i18next.t('banking'),
-                  path: PATH_DASHBOARD.hict.setting.banking,
+                  path: PATH_DASHBOARD.fm.setting.banking,
                   isShow: isShowBank,
                 },
                 {
                   title: i18next.t('nationality'),
-                  path: PATH_DASHBOARD.hict.setting.nationality,
+                  path: PATH_DASHBOARD.fm.setting.nationality,
                   isShow: isShowNationality,
                 },
                 {
                   title: i18next.t('user'),
-                  path: PATH_DASHBOARD.hict.setting.userList,
+                  path: PATH_DASHBOARD.fm.setting.userList,
                   isShow: true,
                   // isShow: isShowEmployeeProfile,
                 },

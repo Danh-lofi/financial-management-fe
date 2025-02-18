@@ -1,15 +1,23 @@
 import { m } from 'framer-motion';
-// @mui
+import useResponsive from '@/hooks/useResponsive';
+import { PATH_ZONE_ON_STORE } from '@/routes/paths';
+import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Container, Typography, Grid, Stack } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// routes
-import { PATH_ZONE_ON_STORE } from '../../routes/paths';
-// components
-import Image from '../../components/image';
-import Iconify from '../../components/iconify';
 import { MotionViewport, varFade } from '../../components/animate';
+import Iconify from '../../components/iconify';
+import Image from '../../components/image';
+
+// @mui
+
+
+// hooks
+
+// routes
+
+// components
+
+
+
 
 // ----------------------------------------------------------------------
 

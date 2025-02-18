@@ -1,9 +1,13 @@
 // @mui
-import { Alert, Tooltip, Stack, Typography, Box, Button } from '@mui/material';
-// auth
+
+import { Alert, Box, Button, Stack, Tooltip, Typography } from '@mui/material';
 import { useAuthContext } from '../../auth/useAuthContext';
-// layouts
 import LoginLayout from '../../layouts/login';
+
+// auth
+
+// layouts
+
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +42,7 @@ export default function LoginAuth0() {
       </Stack>
 
       <Alert severity="info" sx={{ mb: 3 }}>
-        Use email : <strong>admin@hict.com.vn</strong> / password :<strong> demo1234</strong>
+        Use email : <strong>admin@fm.com.vn</strong> / password :<strong> demo1234</strong>
       </Alert>
 
       <Button

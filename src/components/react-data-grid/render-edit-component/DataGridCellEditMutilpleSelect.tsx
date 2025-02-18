@@ -1,4 +1,4 @@
-import WMutilpeSelectTable from "components/common/WMutilpeSelectTable";
+import WMutilpeSelectTable from "@/components/common/WMutilpeSelectTable";
 
 export function renderCellEditMutilpleSelect({
   row,

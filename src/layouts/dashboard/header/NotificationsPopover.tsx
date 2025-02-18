@@ -64,7 +64,7 @@ export default function NotificationsPopover() {
   });
   const { noticeList,totalNotSeen } = useSelector((state) => state.notice);
  
-  const [notifications, setNotifications] = useState(_notifications);
+  const [notifications, setNotifications] = useState([]);
   const { t } = useLocales();
   const totalUnRead = noticeList?.filter((item) => item.isViewed === true).length ?? 0;
   const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) => {
@@ -86,7 +86,7 @@ export default function NotificationsPopover() {
       pageIndex: DEFAULT_PAGINATION.PAGE_INDEX,
     });
     setOpenPopover(null);
-    navigate(`/dashboard/hict/notice/notice-details/${item.type}/${item.employee_id}`);
+    navigate(`/dashboard/ MM/notice/notice-details/${item.type}/${item.employee_id}`);
   };
   const handleMarkAllAsRead = async () => {
     let errorCount = 0;
@@ -190,7 +190,7 @@ export default function NotificationsPopover() {
           <Box sx={{ p: 1 }}>
             <Button fullWidth disableRipple onClick={handleViewAll}>
               {t('viewMore')}
-              {/* <NavLink to="/dashboard/hict/notice/list">View All</NavLink> */}
+              {/* <NavLink to="/dashboard/fmnotice/list">View All</NavLink> */}
             </Button>
           </Box>
         </Scrollbar>

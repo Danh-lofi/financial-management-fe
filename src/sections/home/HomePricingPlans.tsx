@@ -1,28 +1,37 @@
-import { useState } from 'react';
 import { m } from 'framer-motion';
-// @mui
-import { styled } from '@mui/material/styles';
+import { useState } from 'react';
+import useResponsive from '@/hooks/useResponsive';
+import { PATH_MINIMAL_ON_STORE } from '@/routes/paths';
 import {
   Box,
+  Button,
+  Container,
+  Divider,
+  Stack,
+  StackProps,
   Tab,
   Tabs,
-  Stack,
-  Button,
-  Divider,
-  Container,
   Typography,
-  StackProps,
 } from '@mui/material';
-// hooks
-import useResponsive from '../../hooks/useResponsive';
-// routes
-import { PATH_MINIMAL_ON_STORE } from '../../routes/paths';
-// _mock_
+import { styled } from '@mui/material/styles';
 import { _homePlans } from '../../_mock/arrays';
-// components
-import SvgColor from '../../components/svg-color';
+import { MotionViewport, varFade } from '../../components/animate';
 import Iconify from '../../components/iconify';
-import { varFade, MotionViewport } from '../../components/animate';
+import SvgColor from '../../components/svg-color';
+
+// @mui
+
+
+// hooks
+
+// routes
+
+// _mock_
+
+// components
+
+
+
 
 // ----------------------------------------------------------------------
 

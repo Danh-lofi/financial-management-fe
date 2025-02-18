@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Utils } from 'utils/utils';
+import { Utils } from '@/utils/utils';
 import { Editor } from '@tinymce/tinymce-react';
 
 // import ReactS3Client from 'react-aws-s3-typescript';

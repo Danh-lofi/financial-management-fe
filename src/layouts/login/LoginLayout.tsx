@@ -1,12 +1,18 @@
 import { useMemo } from 'react';
-// @mui
 import Slider, { Settings } from 'react-slick';
-import { Typography, Stack } from '@mui/material';
-// components
-import Logo from '../../components/logo';
+import { Stack, Typography } from '@mui/material';
 import Image from '../../components/image';
+import Logo from '../../components/logo';
+import { SliderWrapper, StyledCard, StyledContent, StyledRoot } from './styles';
+
+// @mui
+
+
+// components
+
+
 //
-import { StyledRoot, StyledContent, StyledCard, SliderWrapper } from './styles';
+
 
 // ----------------------------------------------------------------------
 
@@ -33,15 +39,7 @@ export default function LoginLayout({ children }: Props) {
       {
         title: 'Chào mừng bạn trở lại!',
         image: '/assets/illustrations/illustration_dashboard.png',
-      },
-      {
-        title: 'Dịch vụ vận tải',
-        image: '/assets/illustrations/illustration_dashboard.png',
-      },
-      {
-        title: 'Dịch vụ hãng tàu',
-        image: '/assets/illustrations/illustration_dashboard.png',
-      },
+      }
     ];
   }, []);
 

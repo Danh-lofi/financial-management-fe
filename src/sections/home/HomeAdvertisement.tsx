@@ -1,15 +1,23 @@
 import { m } from 'framer-motion';
-// @mui
+import { PATH_FREE_VERSION, PATH_MINIMAL_ON_STORE } from '@/routes/paths';
+import { Box, Button, Container, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Button, Box, Container, Stack } from '@mui/material';
-// utils
-import { bgGradient } from '../../utils/cssStyles';
-// routes
-import { PATH_FREE_VERSION, PATH_MINIMAL_ON_STORE } from '../../routes/paths';
-// components
+import { MotionViewport, varFade } from '../../components/animate';
 import Iconify from '../../components/iconify';
 import Image from '../../components/image';
-import { MotionViewport, varFade } from '../../components/animate';
+import { bgGradient } from '../../utils/cssStyles';
+
+// @mui
+
+
+// utils
+
+// routes
+
+// components
+
+
+
 
 // ----------------------------------------------------------------------
 

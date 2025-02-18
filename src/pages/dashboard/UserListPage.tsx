@@ -1,45 +1,57 @@
-import { Helmet } from 'react-helmet-async';
 import { paramCase } from 'change-case';
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-// @mui
+import { PATH_DASHBOARD } from '@/routes/paths';
 import {
-  Tab,
-  Tabs,
-  Card,
-  Table,
   Button,
-  Tooltip,
-  Divider,
-  TableBody,
+  Card,
   Container,
+  Divider,
   IconButton,
+  Tab,
+  Table,
+  TableBody,
   TableContainer,
+  Tabs,
+  Tooltip,
 } from '@mui/material';
-// routes
-import { PATH_DASHBOARD } from '../../routes/paths';
-// @types
 import { IUserAccountGeneral } from '../../@types/user';
-// _mock_
 import { _userList } from '../../_mock/arrays';
-// components
-import Iconify from '../../components/iconify';
-import Scrollbar from '../../components/scrollbar';
 import ConfirmDialog from '../../components/confirm-dialog';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
+import Iconify from '../../components/iconify';
+import Scrollbar from '../../components/scrollbar';
 import { useSettingsContext } from '../../components/settings';
 import {
-  useTable,
-  getComparator,
-  emptyRows,
-  TableNoData,
   TableEmptyRows,
   TableHeadCustom,
-  TableSelectedAction,
+  TableNoData,
   TablePaginationCustom,
+  TableSelectedAction,
+  emptyRows,
+  getComparator,
+  useTable,
 } from '../../components/table';
+import { UserTableRow, UserTableToolbar } from '../@/sections/@dashboard/user/list';
+
+// @mui
+
+// routes
+
+// @types
+
+// _mock_
+
+// components
+
+
+
+
+
+
 // sections
-import { UserTableToolbar, UserTableRow } from '../../sections/@dashboard/user/list';
+
 
 // ----------------------------------------------------------------------
 
@@ -187,7 +199,7 @@ export default function UserListPage() {
   return (
     <>
       <Helmet>
-        <title> User: List | hict Portal</title>
+        <title> User: List |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
