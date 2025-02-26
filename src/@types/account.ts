@@ -1,13 +1,10 @@
 type IRegisterAccount = {
-  userGroupCode: string;
-  userId: string;
-  passWord: string;
+  username: string;
+  password: string;
   confirmPassword: string;
-  userName: string;
-  address: string;
-  userNumber: string;
-  telphone: string;
-  email: string;
+  name?: string;
+  phone?: string;
+  email?: string;
 };
 
 type IAccount = {
@@ -49,3 +46,13 @@ type IAssignProject = {
   employeeId: string | number;
   projectId: string | number;
 };
+
+export type {
+  IRegisterAccount,
+  IAccount,
+  IAccountUpdateProfile,
+  IAccountLogin,
+  IAccountChangePassword,
+  IParamsAccount,
+  IAssignProject,
+}

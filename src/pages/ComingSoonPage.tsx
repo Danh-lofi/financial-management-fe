@@ -1,16 +1,24 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
+import { Box, Button, IconButton, InputAdornment, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Box, Stack, Button, Typography, IconButton, InputAdornment } from '@mui/material';
-// hooks
-import useCountdown from '../hooks/useCountdown';
-// _mock
 import { _socials } from '../_mock/arrays';
-// components
-import Iconify from '../components/iconify';
-import { CustomTextField } from '../components/custom-input';
-// assets
 import { ComingSoonIllustration } from '../assets/illustrations';
+import { CustomTextField } from '../components/custom-input';
+import Iconify from '../components/iconify';
+import useCountdown from '../hooks/useCountdown';
+
+// @mui
+
+
+// hooks
+
+// _mock
+
+// components
+
+
+// assets
+
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +28,7 @@ export default function ComingSoonPage() {
   return (
     <>
       <Helmet>
-        <title> Coming Soon | hict Portal</title>
+        <title> Coming Soon |  MM Portal</title>
       </Helmet>
 
       <Typography variant="h3" paragraph>

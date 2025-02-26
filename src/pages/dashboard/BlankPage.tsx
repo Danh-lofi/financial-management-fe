@@ -1,9 +1,13 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
+import { Box, Container, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Container, Typography, Box } from '@mui/material';
-// components
 import { useSettingsContext } from '../../components/settings';
+
+// @mui
+
+
+// components
+
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +17,7 @@ export default function BlankPage() {
   return (
     <>
       <Helmet>
-        <title> Blank Page | hict Portal</title>
+        <title> Blank Page |  MM Portal</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>

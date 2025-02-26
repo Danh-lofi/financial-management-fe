@@ -1,21 +1,25 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
 import { Box } from '@mui/material';
-// components
 import ScrollProgress from '../components/scroll-progress';
-// sections
 import {
-  HomeHero,
-  HomeMinimal,
-  HomeDarkMode,
-  HomeLookingFor,
-  HomeForDesigner,
-  HomeColorPresets,
-  HomePricingPlans,
   HomeAdvertisement,
   HomeCleanInterfaces,
+  HomeColorPresets,
+  HomeDarkMode,
+  HomeForDesigner,
+  HomeHero,
   HomeHugePackElements,
+  HomeLookingFor,
+  HomeMinimal,
+  HomePricingPlans,
 } from '../sections/home';
+
+// @mui
+
+// components
+
+// sections
+
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +27,7 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title> The starting point for your next project | hict Portal</title>
+        <title> The starting point for your next project |  MM Portal</title>
       </Helmet>
 
       <ScrollProgress />

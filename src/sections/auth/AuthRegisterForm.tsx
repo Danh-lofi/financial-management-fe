@@ -28,16 +28,13 @@ import SnakeBar from '../../utils/snackbar';
 // ----------------------------------------------------------------------
 
 type FormValuesProps = {
-  userGroupCode: string;
-  userId: string;
-  passWord: string;
+  username: string;
+  password: string;
   confirmPassword: string;
-  userName: string;
-  address: string;
-  userNumber: string;
-  telphone: string;
-  email: string;
-  // ! for show aler
+  name: string;
+  phone?: string;
+  email?: string;
+  // ! for show alert after submit
   afterSubmit?: string;
 };
 
@@ -53,31 +50,24 @@ export default function AuthRegisterForm() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const RegisterSchema = Yup.object().shape({
-    userGroupCode: Yup.string().required('Vui lòng không bỏ trống trường này'),
-    userId: Yup.string().required('Vui lòng không bỏ trống trường này'),
-    passWord: Yup.string().required('Vui lòng không bỏ trống trường này'),
+    username: Yup.string().required('Vui lòng không bỏ trống trường này'),
+    password: Yup.string().required('Vui lòng không bỏ trống trường này'),
     confirmPassword: Yup.string()
       .required('Vui lòng không bỏ trống trường này')
-      .oneOf([Yup.ref('passWord')], 'Nhập lại mật khẩu không chính xác'),
-    userName: Yup.string().required('Vui lòng không bỏ trống trường này'),
-    userNumber: Yup.string()
-      .required('Vui lòng không bỏ trống trường này')
-      .matches(/^\d{9}|\d{12}$/, 'CMND/CCCD không hợp lệ'),
-    telphone: Yup.string()
+      .oneOf([Yup.ref('password')], 'Nhập lại mật khẩu không chính xác'),
+    name: Yup.string().required('Vui lòng không bỏ trống trường này'),
+    phone: Yup.string()
       .required('Vui lòng không bỏ trống trường này')
       .matches(/^0\d{9,11}$/, 'Số điện thoại không hợp lệ'),
     email: Yup.string().required('Vui lòng không bỏ trống trường này').email('Email không hợp lệ'),
   });
 
   const defaultValues = {
-    userGroupCode: '',
-    userId: '',
-    passWord: '',
+    username: '',
+    password: '',
     confirmPassword: '',
-    userName: '',
-    address: '',
-    userNumber: '',
-    telphone: '',
+    name: '',
+    phone: '',
     email: '',
   };
 
@@ -95,7 +85,6 @@ export default function AuthRegisterForm() {
   } = methods;
 
   const onSubmit = async (data: FormValuesProps) => {
-    console.log('🚀 ~ onSubmit ~ data:', data);
     try {
       await AccountApi.register(data);
       reset();
@@ -116,22 +105,9 @@ export default function AuthRegisterForm() {
         {!!errors.afterSubmit && <Alert severity="error">{errors.afterSubmit.message}</Alert>}
 
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <RHFSelect
-            isRequired
-            name="userGroupCode"
-            label={'Nhóm khách hàng'}
-            shrink={false}
-            size="small"
-          >
-            {OPTIONS?.map((item, index) => (
-              <MenuItem key={index} value={item.value}>
-                {item.label}
-              </MenuItem>
-            ))}
-          </RHFSelect>
           <RHFTextField
             isRequired
-            name="userId"
+            name="username"
             label="Tên đăng nhập"
             shrink={false}
             size="small"
@@ -140,7 +116,7 @@ export default function AuthRegisterForm() {
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
           <RHFTextField
             isRequired
-            name="passWord"
+            name="password"
             label="Mật khẩu"
             shrink={false}
             size="small"
@@ -176,19 +152,17 @@ export default function AuthRegisterForm() {
             }}
           />
         </Stack>
-        <RHFTextField isRequired name="userName" label="Họ và tên" shrink={false} size="small" />
+        <RHFTextField isRequired name="name" label="Họ và tên" shrink={false} size="small" />
         <RHFTextField isRequired name="email" label="Email" shrink={false} size="small" />
         <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-          <RHFTextField isRequired name="userNumber" label="Số CMND" shrink={false} size="small" />
           <RHFTextField
             isRequired
-            name="telphone"
+            name="phone"
             label="Số điện thoại"
             shrink={false}
             size="small"
           />
         </Stack>
-        <RHFTextField name="address" label="Địa chỉ" shrink={false} size="small" />
 
         <LoadingButton
           fullWidth

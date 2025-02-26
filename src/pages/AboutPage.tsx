@@ -1,8 +1,11 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
 import { Divider } from '@mui/material';
+import { AboutHero, AboutTeam, AboutTestimonials, AboutVision, AboutWhat } from '../sections/about';
+
+// @mui
+
 // sections
-import { AboutHero, AboutWhat, AboutTeam, AboutVision, AboutTestimonials } from '../sections/about';
+
 
 // ----------------------------------------------------------------------
 
@@ -10,7 +13,7 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title> About us | hict Portal</title>
+        <title> About us |  MM Portal</title>
       </Helmet>
 
       <AboutHero />

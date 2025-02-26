@@ -1,16 +1,14 @@
+import { IAccountChangePassword, IAccountLogin, IAccountUpdateProfile, IAssignProject, IParamsAccount, IRegisterAccount } from '@/@types/account';
 import { IRefreshToken } from '../@types/user';
 import { deleteAsync, getAsync, postAsync } from './http-client';
 
-const url = '/users';
+const url = '/auth';
 const AccountApi = {
   login: (data: IAccountLogin) => {
-    return postAsync(`${url}/getToken`, data);
+    return postAsync(`${url}/login-with-password`, data);
   },
   register: (data: IRegisterAccount) => {
-    return postAsync(`${url}/register`, data);
-  },
-  getUserInfo: (UserID: string) => {
-    return postAsync(`${url}/getInfo`, { UserID });
+    return postAsync(`${url}/signup`, data);
   },
   updateUserInfo: (data: IAccountUpdateProfile) => {
     return postAsync(`${url}/user_update`, data);

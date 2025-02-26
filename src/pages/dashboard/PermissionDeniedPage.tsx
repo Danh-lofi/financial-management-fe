@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocales } from '@/locales';
+import { PATH_DASHBOARD } from '@/routes/paths';
 import {
   Box,
   Card,
@@ -10,7 +11,6 @@ import {
   ToggleButtonGroup,
   Typography,
 } from '@mui/material';
-import { PATH_DASHBOARD } from '@/routes/paths';
 import RoleBasedGuard from '../../auth/RoleBasedGuard';
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import { useSettingsContext } from '../../components/settings';

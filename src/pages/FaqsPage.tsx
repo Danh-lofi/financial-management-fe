@@ -1,8 +1,11 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
 import { Box, Container, Typography } from '@mui/material';
+import { FaqsCategory, FaqsForm, FaqsHero, FaqsList } from '../sections/faqs';
+
+// @mui
+
 // sections
-import { FaqsHero, FaqsCategory, FaqsList, FaqsForm } from '../sections/faqs';
+
 
 // ----------------------------------------------------------------------
 
@@ -10,7 +13,7 @@ export default function FaqsPage() {
   return (
     <>
       <Helmet>
-        <title> Faqs | hict Portal</title>
+        <title> Faqs |  MM Portal</title>
       </Helmet>
 
       <FaqsHero />

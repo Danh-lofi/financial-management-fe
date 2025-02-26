@@ -1,5 +1,6 @@
 import { createContext, useCallback, useEffect, useMemo, useReducer } from 'react';
 import AccountApi from '@/apis/account.api';
+import UserApi from '@/apis/user.api';
 import { LOCAL_STORAGE_KEYS } from '@/constants/app.constants';
 import { LocalUtils } from '@/utils/local';
 import localStorageAvailable from '@/utils/localStorageAvailable';
@@ -113,13 +114,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
       if (accessToken && isValidToken(accessToken)) {
         setSession(accessToken);
         const decodeToken = jwtDecode(accessToken);
-        const userInfo = await AccountApi.getUserInfo(decodeToken?.userId);
+        const userInfo = await UserApi.getInfo();
 
         dispatch({
           type: Types.INITIAL,
           payload: {
             isAuthenticated: true,
-            user: userInfo?.data?.payload?.[0],
+            user: userInfo?.data?.data,
           },
         });
       } else {
@@ -155,19 +156,21 @@ export function AuthProvider({ children }: AuthProviderProps) {
         password,
       });
 
-      const { accessToken, refreshToken, payload } = response.data;
-      LocalUtils.set(LOCAL_STORAGE_KEYS.REFRESH_TOKEN, refreshToken);
+      const { accessToken, 
+        // refreshToken,
+         user } = response.data.data;
+      // LocalUtils.set(LOCAL_STORAGE_KEYS.REFRESH_TOKEN, refreshToken);
 
       // Group Permission
       if (accessToken) {
         setSession(accessToken);
-        const userInfo = await AccountApi.getUserInfo(payload.user.userId);
+        // const userInfo = await AccountApi.getUserInfo(payload.user.userId);
         dispatch({
           type: Types.LOGIN,
           payload: {
             user: {
-              refreshToken,
-              ...userInfo?.data?.payload?.[0],
+              // refreshToken,
+              ...user,
             },
           },
         });

@@ -1,9 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { Button, Typography, Stack } from '@mui/material';
-// assets
+import { Button, Stack, Typography } from '@mui/material';
 import { MaintenanceIllustration } from '../assets/illustrations';
+
+// @mui
+
+// assets
+
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +14,7 @@ export default function MaintenancePage() {
   return (
     <>
       <Helmet>
-        <title> Maintenance | hict Portal</title>
+        <title> Maintenance |  MM Portal</title>
       </Helmet>
 
       <Stack sx={{ alignItems: 'center' }}>

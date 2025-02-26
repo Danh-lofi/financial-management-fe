@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link as RouterLink } from 'react-router-dom';
-import { Link, Typography } from '@mui/material';
 import { PATH_AUTH } from '@/routes/paths';
+import { Link, Typography } from '@mui/material';
 import { SentIcon } from '../../assets/icons';
 import Iconify from '../../components/iconify';
 import AuthNewPasswordForm from '../../sections/auth/AuthNewPasswordForm';

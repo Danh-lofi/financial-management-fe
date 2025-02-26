@@ -1,6 +1,6 @@
-import { Box } from '@mui/material';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Box } from '@mui/material';
 
 type PageWrapperProps = {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ const PageWrapper = ({ children, title, meta, ...other }: PageWrapperProps) => {
   return (
     <>
       <Helmet>
-        <title> {title} | hict</title>
+        <title> {title} |  MM</title>
         {meta}
       </Helmet>
 

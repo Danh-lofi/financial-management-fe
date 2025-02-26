@@ -1,10 +1,14 @@
 import { Helmet } from 'react-helmet-async';
-// @mui
-import { Container, Box } from '@mui/material';
-// _mock
+import { Box, Container } from '@mui/material';
 import { _mapContact } from '../_mock/arrays';
+import { ContactForm, ContactHero, ContactMap } from '../sections/contact';
+
+// @mui
+
+// _mock
+
 // sections
-import { ContactHero, ContactForm, ContactMap } from '../sections/contact';
+
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +16,7 @@ export default function ContactPage() {
   return (
     <>
       <Helmet>
-        <title> Contact us | hict Portal</title>
+        <title> Contact us |  MM Portal</title>
       </Helmet>
 
       <ContactHero />

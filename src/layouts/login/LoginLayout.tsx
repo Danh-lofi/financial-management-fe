@@ -53,13 +53,7 @@ export default function LoginLayout({ children }: Props) {
           ml: { xs: 2, md: 5 },
         }}
       />
-      <SliderWrapper>
-        <Slider {...settings}>
-          {data.map((item, index) => (
-            <SlickCard key={index} {...item} />
-          ))}
-        </Slider>
-      </SliderWrapper>
+      <SlickCard image={data[0].image} title={data[0].title} />
 
       <StyledContent>
         <Stack sx={{ width: 1 }}> {children} </Stack>
