@@ -126,9 +126,9 @@ export const handleExportExel = async (columns: any, datasource: any, exportfile
   document.body.removeChild(link);
 };
 
-// export const handleImportExcel = async (data: any) => {
-//   this.props?.functionRequire.importExcelFunction(data);
-// };
+export const handleImportExcel = async (data: any) => {
+  return excelUtil.formatDataFromExcel(data);
+};
 
 export const handleExportExelTemplate = async (columns: any) => {
   try {

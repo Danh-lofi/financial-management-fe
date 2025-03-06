@@ -1,22 +1,6 @@
 import React, { useState } from 'react';
-
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  TextField,
-  Grid,
-  Divider,
-  Box,
-  Stack,
-  Typography,
-} from '@mui/material';
-
 import {
   AddBox,
-  Warning,
   AddCircleOutlined,
   BarChartOutlined,
   CheckCircleOutlined,
@@ -39,12 +23,25 @@ import {
   SwapVertOutlined,
   SyncOutlined,
   VerticalAlignBottomOutlined,
+  Warning,
   WarningAmberOutlined,
 } from '@mui/icons-material';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
-
-import WTooltipTable from './WTooltipTable';
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Divider,
+  Grid,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
 import Iconify from '../iconify';
+import WTooltipTable from './WTooltipTable';
 
 export type ToolBarButtonType = {
   [key: string]: {
@@ -166,10 +163,10 @@ export const toolBarButtonTypes: ToolBarButtonType = {
   },
   importExcel: {
     id: 'importExcel',
-    label: 'Nhập excel',
+    label: 'Nhập Excel',
     // fontColor: 'error',
     variant: 'outlined',
-    icon: <></>,
+    icon: <Iconify icon="eva:plus-fill" />,
   },
   add: {
     id: 'add',

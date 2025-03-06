@@ -70,16 +70,14 @@ export const PATH_DASHBOARD = {
       attendance: path(ROOTS_DASHBOARD, '/fm/employee-management/attendance'),
       createAttendance: path(ROOTS_DASHBOARD, '/fm/employee-management/attendance/create'),
     },
-    category: {
-      root: path(ROOTS_DASHBOARD, '/fm/transport-host'),
-      truckList: path(ROOTS_DASHBOARD, '/fm/transport-host/truck'),
-      remoocList: path(ROOTS_DASHBOARD, '/fm/transport-host/remooc'),
-      driverList: path(ROOTS_DASHBOARD, '/fm/transport-host/driver'),
+    categories: {
+      root: path(ROOTS_DASHBOARD, '/fm/categories'),
+      categoryList: path(ROOTS_DASHBOARD, '/fm/categories/category'),
     },
-    transportManagement: {
-      root: path(ROOTS_DASHBOARD, '/transport-management'),
-      general: path(ROOTS_DASHBOARD, '/fm/transport-management/general'),
-      transportList: path(ROOTS_DASHBOARD, '/fm/transport-management/transport-list'),
+    financeManagement: {
+      root: path(ROOTS_DASHBOARD, '/finance-management'),
+      general: path(ROOTS_DASHBOARD, '/fm/finance-management/general'),
+      transactionList: path(ROOTS_DASHBOARD, '/fm/finance-management/transaction-list'),
     },
     notice: {
       root: path(ROOTS_DASHBOARD, '/notice'),
@@ -99,8 +97,7 @@ export const PATH_DASHBOARD = {
       editBanking: (id: string) => path(ROOTS_DASHBOARD, `/fm/setting/banking/edit/${id}`),
       nationality: path(ROOTS_DASHBOARD, '/fm/setting/nationality'),
       createNationality: path(ROOTS_DASHBOARD, '/fm/setting/nationality/create'),
-      editNationality: (id: string) =>
-        path(ROOTS_DASHBOARD, `/fm/setting/nationality/edit/${id}`),
+      editNationality: (id: string) => path(ROOTS_DASHBOARD, `/fm/setting/nationality/edit/${id}`),
       department: path(ROOTS_DASHBOARD, '/fm/setting/department'),
       createDepartment: path(ROOTS_DASHBOARD, '/fm/setting/department/create'),
       editDepartment: (id: string) => path(ROOTS_DASHBOARD, `/fm/setting/department/edit/${id}`),

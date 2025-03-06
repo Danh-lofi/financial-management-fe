@@ -512,7 +512,7 @@ const DataGrid = forwardRef<reactDataGridHandle, DataGridProps>(
       }
 
       // eslint-disable-next-line no-return-assign
-      rows.forEach((row: any, index: number) => (row.STT = index + 1));
+      rows.map((row: any, index: number) => (row.STT = index + 1));
       if (pagination === 'scroll') {
         reactDataGridRef.current?.element.addEventListener('scroll', handleScroll);
       }
@@ -828,29 +828,29 @@ const DataGrid = forwardRef<reactDataGridHandle, DataGridProps>(
     };
 
     const renderToolbar = useMemo(() => {
-      if (toolbar.find((item: any) => item.id === 'importExcel')) {
-        return toolbar.map((item: any) => {
-          if (item.id === 'importExcel') {
-            return {
-              ...item,
-              icon: (
-                <>
-                  <WButtonImportFile
-                    className="upload-table"
-                    onUpload={handleImportExcel}
-                    headers={columns}
-                    title=""
-                  >
-                    {' '}
-                  </WButtonImportFile>
-                  <ImportExportOutlined />
-                </>
-              ),
-            };
-          }
-          return item;
-        });
-      }
+      // if (toolbar.find((item: any) => item.id === 'importExcel')) {
+      //   return toolbar.map((item: any) => {
+      //     if (item.id === 'importExcel') {
+      //       return {
+      //         ...item,
+      //         icon: (
+      //           <>
+      //             <WButtonImportFile
+      //               className="upload-table"
+      //               onUpload={handleImportExcel}
+      //               headers={columns}
+      //               title=""
+      //             >
+      //               {' '}
+      //             </WButtonImportFile>
+      //             <ImportExportOutlined />
+      //           </>
+      //         ),
+      //       };
+      //     }
+      //     return item;
+      //   });
+      // }
       return toolbar;
     }, [toolbar]);
 

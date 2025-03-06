@@ -6,8 +6,8 @@ import CompactLayout from '@/layouts/compact';
 import DashboardLayout from '@/layouts/dashboard';
 import {
   BlankPage,
+  CategoryPage,
   ComingSoonPage,
-  DriverPage,
   EmployeeGeneralPage,
   EmployeeListPage,
   FileManagerPage,
@@ -20,10 +20,8 @@ import {
   Page500,
   PermissionDeniedPage,
   RegisterPage,
-  RemoocPage,
   ResetPasswordPage,
-  TransportListPage,
-  TruckPage,
+  TransactionListPage,
   UserAccountPage,
   UserCardsPage,
   UserCreatePage,
@@ -101,52 +99,28 @@ export default function Router() {
           children: [
             { element: <Navigate to="/" replace />, index: true },
             {
-              path: 'employee-management',
-              children: [
-                { element: <Navigate to="/dashboard/user/profile" replace />, index: true },
-                {
-                  path: 'general',
-                  element: <EmployeeGeneralPage />,
-                },
-                {
-                  path: 'employee-list',
-                  element: <EmployeeListPage />,
-                },
-              ],
-            },
-            {
-              path: 'transport-host',
+              path: 'categories',
               children: [
                 {
                   element: <Navigate to="/dashboard/fm/transport-host/truck" replace />,
                   index: true,
                 },
                 {
-                  path: 'truck',
-                  element: <TruckPage />,
-                },
-
-                {
-                  path: 'remooc',
-                  element: <RemoocPage />,
-                },
-
-                {
-                  path: 'driver',
-                  element: <DriverPage />,
+                  path: 'category',
+                  element: <CategoryPage />,
                 },
               ],
             },
             {
-              path: 'transport-management',
+              path: 'finance-management',
               children: [
                 {
                   path: 'general',
                   element: <EmployeeGeneralPage />,
                 },
                 {
-                  path: 'transport-list',
-                  element: <TransportListPage />,
+                  path: 'transaction-list',
+                  element: <TransactionListPage />,
                 },
               ],
             },

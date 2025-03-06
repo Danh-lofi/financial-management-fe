@@ -50,33 +50,26 @@ const navConfig = [
         children: [
           {
             title: i18next.t('category'),
-            path: PATH_DASHBOARD.fm.category.root,
+            path: PATH_DASHBOARD.fm.categories.root,
             children: [
               {
-                title: i18next.t('truck'),
-                path: PATH_DASHBOARD.fm.category.truckList,
+                title: 'Danh sách loại chi tiêu',
+                path: PATH_DASHBOARD.fm.categories.categoryList,
               },
-              {
-                title: i18next.t('remooc'),
-                path: PATH_DASHBOARD.fm.category.remoocList,
-              },
-              {
-                title: i18next.t('driver'),
-                path: PATH_DASHBOARD.fm.category.driverList,
-              },
+              
             ],
           },
           {
-            title: i18next.t('transportManagement'),
-            path: PATH_DASHBOARD.fm.transportManagement.general,
+            title: 'Quản lý chi tiêu',
+            path: PATH_DASHBOARD.fm.financeManagement.general,
             children: [
               {
                 title: i18next.t('general'),
-                path: PATH_DASHBOARD.fm.transportManagement.general,
+                path: PATH_DASHBOARD.fm.financeManagement.general,
               },
               {
-                title: i18next.t('transportList'),
-                path: PATH_DASHBOARD.fm.transportManagement.transportList,
+                title: 'Danh sách chi tiêu',
+                path: PATH_DASHBOARD.fm.financeManagement.transactionList,
               },
             ],
           },

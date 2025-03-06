@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-// slices
 import calendarReducer from './slices/calendar';
+import categoryReducer from './slices/category/category';
 import chatReducer from './slices/chat';
 import bankingReducer from './slices/dashboard/banking';
+import contractReducer from './slices/dashboard/contract';
 import dayoffReducer from './slices/dashboard/dayoff';
 import departmentReducer from './slices/dashboard/department';
 import districtReducer from './slices/dashboard/district';
@@ -16,14 +17,13 @@ import objectTypeReducer from './slices/dashboard/objectType';
 import positionReducer from './slices/dashboard/position';
 import projectReducer from './slices/dashboard/project';
 import provinceReducer from './slices/dashboard/province';
-import contractReducer from './slices/dashboard/contract';
 import userReducer from './slices/dashboard/user';
 import wardReducer from './slices/dashboard/ward';
+import driverhostReducer from './slices/driverhost/driverhost';
 import kanbanReducer from './slices/kanban';
 import mailReducer from './slices/mail';
-import productReducer from './slices/product';
 import navReducer from './slices/nav/navSlice';
-import driverhostReducer from './slices/driverhost/driverhost';
+import productReducer from './slices/product';
 
 // ----------------------------------------------------------------------
 
@@ -43,6 +43,7 @@ export const productPersistConfig = {
 
 const rootReducer = combineReducers({
   driverhost: driverhostReducer,
+  category: categoryReducer,
   notice: noticeReducer,
   user: userReducer,
   banking: bankingReducer,

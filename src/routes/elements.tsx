@@ -35,17 +35,15 @@ export const TransportListPage = Loadable(
   lazy(() => import('../pages/dashboard/fm/transport-management/order-list/index'))
 );
 
-// Category
-export const TruckPage = Loadable(
-  lazy(() => import('../pages/dashboard/fm/transport-host/truck/index'))
+export const TransactionListPage = Loadable(
+  lazy(() => import('../pages/dashboard/fm/finance-management/transaction-list/index'))
 );
 
-export const RemoocPage = Loadable(
-  lazy(() => import('../pages/dashboard/fm/transport-host/remooc/index'))
+// Category
+export const CategoryPage = Loadable(
+  lazy(() => import('../pages/dashboard/fm/categories/category/index'))
 );
-export const DriverPage = Loadable(
-  lazy(() => import('../pages/dashboard/fm/transport-host/driver/index'))
-);
+
 
 // Notices
 export const NoticeDetailsPage = Loadable(

@@ -7,15 +7,18 @@
   "plugins": ["@typescript-eslint", "prettier"],
   "extends": ["airbnb", "airbnb-typescript", "airbnb/hooks", "prettier"],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": "./tsconfig.json",
-    "warnOnUnsupportedTypeScriptVersion": false
-  },
+  // "parserOptions": {
+  //   // "ecmaFeatures": {
+  //   //   "jsx": true
+  //   // },
+  //   // "ecmaVersion": "latest",
+  //   // "sourceType": "module",
+  //   // "project": "./tsconfig.json",
+  //   // "warnOnUnsupportedTypeScriptVersion": false
+  //   "parser": "@typescript-eslint/parser",
+  //   "project": "./tsconfig.json",
+  //   // "tsconfigRootDir": __dirname,
+  // },
   "settings": {
     "import/resolver": {
       "typescript": {
