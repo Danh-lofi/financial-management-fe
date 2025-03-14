@@ -6,6 +6,7 @@ type ITransaction = {
   description: string;
   amount: number;
   category: string;
+  transactionDate: Date;
   user: string;
   created_at: Date;
   updated_at: Date;

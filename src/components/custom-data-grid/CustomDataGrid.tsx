@@ -8,8 +8,17 @@ import RotateLeftIcon from '@mui/icons-material/RotateLeft';
 import SaveIcon from '@mui/icons-material/Save';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import { Box, Button, Grid } from '@mui/material';
-import { DataGrid, GridCallbackDetails, GridColumns, GridRowModel, GridSelectionModel, GridValidRowModel } from '@mui/x-data-grid';
+import {
+  DataGrid,
+  GridCallbackDetails,
+  GridColumns,
+  GridRowModel,
+  GridSelectionModel,
+  GridToolbar,
+  GridValidRowModel,
+} from '@mui/x-data-grid';
 import ConfirmDialog from '../confirm-dialog';
+import EmptyDataDataGrid from './components/EmptyData';
 
 type IProps = {
   rows: GridValidRowModel[];
@@ -55,6 +64,7 @@ const CustomDataGrid = ({
       });
       return newRows;
     });
+    return row;
   };
 
   const addNewRowHandle = () => {
@@ -69,17 +79,15 @@ const CustomDataGrid = ({
     if (!selectionIds.length) {
       snackbar.error('Vui lòng chọn dữ liệu cần xóa');
       toggleConfirmDialogHandle();
-      return
+      return;
     }
-    onDeleteRows && await onDeleteRows(selectionIds);
+    onDeleteRows && (await onDeleteRows(selectionIds));
     toggleConfirmDialogHandle();
-  }
+  };
 
   const toggleConfirmDialogHandle = () => {
     setIsConfirm(!isConfirm);
   };
-
-
 
   const saveHandle = () => {
     // Get List Row has isEdit
@@ -87,7 +95,7 @@ const CustomDataGrid = ({
     onSave && onSave(saveRows);
   };
   return (
-    <Box sx={{ height: 400, width: '100%' }}>
+    <Box sx={{ height: 500, width: '100%' }}>
       <Grid justifyContent={'flex-end'} container spacing={1} padding={2}>
         {onReload && (
           <Grid item>
@@ -182,6 +190,7 @@ const CustomDataGrid = ({
           </Grid>
         )}
       </Grid>
+
       <DataGrid
         rows={rows}
         columns={columns}
@@ -193,9 +202,14 @@ const CustomDataGrid = ({
         processRowUpdate={updateRow}
         // onProcessRowUpdateError={handleProcessRowUpdateError}
         loading={loading}
-        onSelectionModelChange={(selectionModel: GridSelectionModel, details: GridCallbackDetails) => {
-          setSelectionIds(selectionModel as string[]);          
+        onSelectionModelChange={(
+          selectionModel: GridSelectionModel,
+          details: GridCallbackDetails
+        ) => {
+          setSelectionIds(selectionModel as string[]);
         }}
+        components={{ Toolbar: GridToolbar, NoRowsOverlay: EmptyDataDataGrid }}
+        sx={{ '--DataGrid-overlayHeight': '300px' }}
       />
       <ConfirmDialog
         open={isConfirm}

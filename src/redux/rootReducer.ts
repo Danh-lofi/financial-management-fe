@@ -24,6 +24,7 @@ import kanbanReducer from './slices/kanban';
 import mailReducer from './slices/mail';
 import navReducer from './slices/nav/navSlice';
 import productReducer from './slices/product';
+import transactionReducer from './slices/transaction/transaction';
 
 // ----------------------------------------------------------------------
 
@@ -64,6 +65,7 @@ const rootReducer = combineReducers({
   calendar: calendarReducer,
   kanban: kanbanReducer,
   nav: navReducer,
+  transaction: transactionReducer,
   product: persistReducer(productPersistConfig, productReducer),
 });
 

@@ -37,3 +37,7 @@ function result(format: string, key = '.00') {
 
   return isInteger ? format.replace(key, '') : format;
 }
+
+export const formatVND = (amount: number) => {
+  return numeral(amount).format('0,0') + ' ₫';
+};

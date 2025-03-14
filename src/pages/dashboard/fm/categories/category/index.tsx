@@ -1,7 +1,6 @@
 // library
 
-import { useEffect, useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
 import { ICategory } from '@/@types/category';
 import CategoryApi from '@/apis/category.api';
 import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
@@ -15,30 +14,11 @@ import SnakeBar from '@/utils/snackbar';
 import { Card, Container } from '@mui/material';
 import { GridColDef, GridValidRowModel } from '@mui/x-data-grid';
 
-// alias path local
-
-type IFormValue = {
-  TruckNo: string;
-  TruckRegisterNo: string;
-};
-
 const CategoryPage = () => {
   const { t } = useLocales();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { categories } = useSelector((state) => state.category);
   const [rows, setRows] = useState<ICategory[]>([]);
-  const tableRef = useRef<any>(null);
-
-  const methods = useForm<IFormValue>({
-    defaultValues: {},
-  });
-  const { handleSubmit } = methods;
-
-  const handleFilter = async (data: IFormValue) => {};
-
-  const handleCheckSelect = (rowSelected: Set<number>) => {
-    console.log('🚀 ~ handleCheckSelect ~ rowSelected:', rowSelected);
-  };
 
   const columns: GridColDef[] = [
     { field: 'name', headerName: 'Tên loại chi tiêu', editable: true, flex: 1 },

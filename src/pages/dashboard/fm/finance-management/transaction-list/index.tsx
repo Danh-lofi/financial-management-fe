@@ -1,176 +1,135 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ITransaction } from '@/@types/transaction';
+import TransactionApi from '@/apis/transaction.api';
+import CustomBreadcrumbs from '@/components/custom-breadcrumbs';
+import CustomDataGrid from '@/components/custom-data-grid/CustomDataGrid';
+import AutocompleteEditInputCell from '@/components/custom-data-grid/components/AutocompleteEditInputCell';
+import DatePickerEditInputCell from '@/components/custom-data-grid/components/DatePickerEditInputCell';
 import PageWrapper from '@/components/page-wrapper';
-import { basicRenderColumns } from '@/components/react-data-grid/basic-render-data';
-import useResponsiveV2 from '@/hooks/useResponsiveV2';
 import { useLocales } from '@/locales';
-import LoadingComponent from '@/pages/components/Loading';
-import { deleteEmployeeRow } from '@/redux/slices/dashboard/employee';
-import { dispatch } from '@/redux/store';
+import { getCategories } from '@/redux/slices/category/category';
+import { getTransactions } from '@/redux/slices/transaction/transaction';
+import { dispatch, useSelector } from '@/redux/store';
 import { PATH_DASHBOARD } from '@/routes/paths';
 import OrderTableToolbar from '@/sections/@dashboard/fm/transport/list/OrderTableToolbar';
-import { PersonAddAlt } from '@mui/icons-material';
-import { Box, Card, Container, Table, TableContainer } from '@mui/material';
-import DriverHostApi from '../../../../../apis/driver-host.api';
-import { toolBarButtonTypes } from '../../../../../components/common/WToolbarTable';
-import CustomBreadcrumbs from '../../../../../components/custom-breadcrumbs';
-import DataGrid, {
-  columnTypes,
-  paginationTypes,
-  selectionTypes,
-} from '../../../../../components/react-data-grid/ReactDataGrid';
-import { JOBMODE_OPTION, STATUS_ORDER_OPTION } from '../../../../../constants/app.constants';
+import { formatVND } from '@/utils/formatNumber';
+import SnakeBar from '@/utils/snackbar';
+import { Box, Card, Container } from '@mui/material';
+import { GridColDef, GridValidRowModel } from '@mui/x-data-grid';
 
 export default function TransactionListPage() {
-  const tableRef = useRef<any>(null);
-  const [listOrder, setListOrder] = useState<IOrderTransport[]>([]);
-  const { isExtraDesktop } = useResponsiveV2();
   const { t } = useLocales();
-  const [params, setParams] = useState<IParamsGetDriverHostBookingList>({
-    StartDate: new Date().toISOString(),
-    EndDate: new Date().toISOString(),
-    ContainerCode: '',
-    DriverNo: '',
-    OrderStatus: '',
-    PinCode: '',
-    RemoocNo: '',
-    // JobModeCode: ,
-  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { categories } = useSelector((state) => state.category);
+  const { transactions } = useSelector((state) => state.transaction);
+  const [rows, setRows] = useState<ITransaction[]>([]);
+  const [params, setParams] = useState<any>({});
 
-  const [dataModal, setDataModal] = useState({
-    isOpen: false,
-    orderSelected: {},
-  });
+  const columns: GridColDef[] = [
+    {
+      field: 'amount',
+      headerName: 'Số tiền',
+      flex: 1,
+      editable: true,
+      renderCell: (params) => {
+        return formatVND(params?.value || 0);
+      },
+    },
+    {
+      field: 'description',
+      headerName: 'Mô tả',
+      flex: 1,
+      editable: true,
+    },
+    {
+      field: 'category',
+      headerName: 'Loại chi tiêu',
+      flex: 1,
+      editable: true,
+      renderEditCell: (params) => {
+        return (
+          <AutocompleteEditInputCell
+            params={params}
+            options={categories.map((item) => ({ label: item.name, value: item.id || '' }))}
+          />
+        );
+      },
+      renderCell: (params) => {
+        const category = categories.find((item) => item.id === params?.value);
+        return category?.name || '';
+      },
+    },
+    {
+      field: 'transactionDate',
+      headerName: 'Ngày giao dịch',
+      flex: 1,
+      type: 'date',
+      editable: true,
+      renderEditCell: (params) => {
+        return <DatePickerEditInputCell params={params} />;
+      },
+      renderCell: (params) => {
+        return new Date(params?.value).toLocaleDateString();
+      },
+    },
+  ];
 
-  const [loading, setLoading] = useState<boolean>(false);
-
-  const handleDeleteRow = async (id: string) => {
-    await dispatch(deleteEmployeeRow({ id, params }));
+  const submitDataHandle = async (data: GridValidRowModel[]) => {
+    await Promise.all(data.map((item) => TransactionApi.upsert(item as ITransaction)));
+    getDataHandle();
+    SnakeBar.success('Cập nhật thành công');
   };
 
-  const openModalDriverHostHandle = (data: any) => {
-    setDataModal({
-      isOpen: true,
-      orderSelected: data,
-    });
+  const deleteDataHandle = async (ids: string[]) => {
+    await Promise.all(ids.map((id) => TransactionApi.delete(id)));
+    getDataHandle();
+    SnakeBar.success('Xóa thành công');
   };
 
-  const handleCheckSelect = (rowSelected: Set<number>) => {
-    const rowSelectedArray = Array.from(rowSelected);
-    // check status lasted row selected > 2
-    const lastOrder = listOrder.find((item, index) => {
-      return rowSelectedArray.includes(index);
-    });
-    const statusLasted = lastOrder?.status;
+  const getDataHandle = async () => {
+    setIsLoading(true);
+    await getCategoriesHandle();
+    await dispatch(getCategories({}));
+    setIsLoading(false);
   };
 
-  const columns = () =>
-    basicRenderColumns(
-      [
-        {
-          key: 'id',
-          name: 'id',
-          editable: false,
-          visible: false,
-          isRowSelected: false,
-        },
-        {
-          key: 'STT',
-          name: 'STT',
-          editable: false,
-          width: 100,
-        },
-        {
-          key: 'date',
-          name: 'Ngày chi tiêu',
-          width: 250,
-          editable: true,
-          type: columnTypes.DatePicker,
-        },
-        {
-          key: 'amount',
-          name: 'Số tiền',
-          width: 250,
-          editable: false,
-          type: columnTypes.NumberInput,  
-          textAlign: 'right',
-        },
-        {
-          key: 'description',
-          name: 'Mô tả',
-          width: 250,
-          editable: true,
-        },
-        {
-          key: 'type',
-          name: 'Loại chi tiêu',
-          width: 250,
-          editable: true,
-        },
-       
-      ],
-      listOrder
-    );
-
-  const getListOrderHandle = async () => {
-    setLoading(true);
-    setListOrder( []);
-    setLoading(false);
+  const getCategoriesHandle = async () => {
+    if (!categories.length) await dispatch(getCategories({}));
   };
+
   useEffect(() => {
-    getListOrderHandle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [params]);
+    getDataHandle();
+  }, []);
+
+  useEffect(() => {
+    setRows(transactions);
+  }, [transactions]);
 
   return (
     <PageWrapper title="Danh sách chi tiêu">
       <Container maxWidth={false}>
-        {isExtraDesktop && (
-          <CustomBreadcrumbs
-            heading="Danh sách chi tiêu"
-            links={[
-              { name: t('dashboard'), href: PATH_DASHBOARD.root },
-              { name: 'Đơn hàng', href: PATH_DASHBOARD.fm.employeeManagement.employeeStatus },
-              { name: 'Danh sách' },
-            ]}
-          />
-        )}
+        <CustomBreadcrumbs
+          heading="Danh sách chi tiêu"
+          links={[
+            { name: t('dashboard'), href: PATH_DASHBOARD.root },
+            { name: 'Đơn hàng', href: PATH_DASHBOARD.fm.employeeManagement.employeeStatus },
+            { name: 'Danh sách' },
+          ]}
+        />
+
         <Box>
           <OrderTableToolbar setParams={setParams} params={params} />
         </Box>
         <Card sx={{ mt: 3 }}>
-          <TableContainer sx={{ position: 'relative', overflow: 'unset' }}>
-            <Table sx={{ minWidth: 800 }}>
-              {loading ? (
-                <LoadingComponent loading={loading} />
-              ) : (
-                <DataGrid
-                  ref={tableRef}
-                  columnKeySelected="pincode"
-                  selection={selectionTypes.multi}
-                  columns={columns()}
-                  setRows={(newRows: React.SetStateAction<IOrderTransport[]>) =>
-                    setListOrder(newRows)
-                  }
-                  rows={listOrder}
-                  pagination={paginationTypes.pagination}
-                  exportfileName="Danh sách đơn hàng"
-                  // buttonConfirm={buttonConfirm}
-                  functionRequire={{
-                    deleteFunction: (data: any) => handleDeleteRow(data),
-                    saveFunction: (editedRows: any) => console.log(editedRows),
-                  }}
-                  toolbar={[
-                    toolBarButtonTypes.exportExcel,
-                    toolBarButtonTypes.add,
-                    toolBarButtonTypes.delete,
-                    toolBarButtonTypes.save,
-                  ]}
-                  limit={12}
-                  handleCheckSelect={handleCheckSelect}
-                />
-              )}
-            </Table>
-          </TableContainer>
+          <CustomDataGrid
+            rows={rows}
+            columns={columns}
+            setRow={setRows}
+            loading={isLoading}
+            onSave={submitDataHandle}
+            onDeleteRows={deleteDataHandle}
+            onReload={getDataHandle}
+          />
         </Card>
       </Container>
     </PageWrapper>

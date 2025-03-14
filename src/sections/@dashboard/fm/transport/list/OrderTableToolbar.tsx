@@ -13,21 +13,19 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  Autocomplete,
   Box,
   Button,
   Grid,
   MenuItem,
+  TextField,
   Typography,
 } from '@mui/material';
 import Iconify from '../../../../../components/iconify';
 
 // @mui
 
-
 // components
-
-
-
 
 // ----------------------------------------------------------------------
 
@@ -86,6 +84,27 @@ export default function OrderTableToolbar({ setParams, params }: Props) {
               </Grid>
               <Grid item xs={12} sm={12} md={3}>
                 <RHFDatePicker size={SIZE_FIELD.SMALL} label="Đến ngày" name="EndDate" />
+              </Grid>
+              <Grid item xs={12} sm={12} md={3}>
+                <Autocomplete
+                  disablePortal
+                  id="combo-box-demo"
+                  options={[
+                    {
+                      label: "test",
+                      value: "1"
+                    },
+                    {
+                      label: "test2",
+                      value: "2"
+                    }
+                  ]}
+                  onChange={(event, newValue) => {
+                    console.log(newValue);
+                  }}
+                  sx={{ width: 300 }}
+                  renderInput={(params) => <TextField {...params} label="test" />}
+                />
               </Grid>
 
               <Grid item xs={12} sm={12} md={3}>
